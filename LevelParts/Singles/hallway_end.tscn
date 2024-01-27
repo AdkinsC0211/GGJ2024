@@ -1,0 +1,118 @@
+[gd_scene load_steps=7 format=3 uid="uid://hlmo83q1odvt"]
+
+[ext_resource type="ArrayMesh" uid="uid://t3bpj1881k1b" path="res://Mesh/floor-large.obj" id="1_r3e2q"]
+[ext_resource type="ArrayMesh" uid="uid://bnhb5tyusb35w" path="res://Mesh/structure-wall.obj" id="2_vl6nm"]
+[ext_resource type="ArrayMesh" uid="uid://dmow862rff26d" path="res://Mesh/top-large.obj" id="3_g6ani"]
+[ext_resource type="ArrayMesh" uid="uid://biwcrds3gmibj" path="res://Mesh/door-wide-closed.obj" id="4_uqtj4"]
+[ext_resource type="ArrayMesh" uid="uid://cf4oi8l8fek2t" path="res://Mesh/structure-corner-inner.obj" id="5_ym5jd"]
+[ext_resource type="ArrayMesh" uid="uid://d0lltqefbudhs" path="res://Mesh/structure-doorway-wide.obj" id="6_d31vq"]
+
+[node name="HallwayEnd" type="Node3D"]
+
+[node name="HallwaySegment" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 4)
+
+[node name="Floor-large" type="MeshInstance3D" parent="HallwaySegment"]
+transform = Transform3D(7, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("1_r3e2q")
+skeleton = NodePath("../../../..")
+
+[node name="Walls" type="Node3D" parent="HallwaySegment"]
+
+[node name="Structure-wall" type="MeshInstance3D" parent="HallwaySegment/Walls"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
+mesh = ExtResource("2_vl6nm")
+skeleton = NodePath("../../../../..")
+
+[node name="Structure-wall2" type="MeshInstance3D" parent="HallwaySegment/Walls"]
+transform = Transform3D(1.50996e-07, 0, -2, 0, 2, 0, 2, 0, 1.50996e-07, -8, 0, 0)
+mesh = ExtResource("2_vl6nm")
+skeleton = NodePath("../../../../..")
+
+[node name="Roof" type="Node3D" parent="HallwaySegment"]
+
+[node name="Top-large" type="MeshInstance3D" parent="HallwaySegment/Roof"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 0)
+mesh = ExtResource("3_g6ani")
+skeleton = NodePath("../..")
+
+[node name="Top-large2" type="MeshInstance3D" parent="HallwaySegment/Roof"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 0)
+mesh = ExtResource("3_g6ani")
+skeleton = NodePath("../..")
+
+[node name="EndSegment" type="Node3D" parent="."]
+
+[node name="Door-wide-closed" type="MeshInstance3D" parent="EndSegment"]
+transform = Transform3D(8.74228e-08, -2, 7.64274e-15, -2, -8.74228e-08, -1.74846e-07, 1.74846e-07, 0, -2, 0, 1.5, -2)
+mesh = ExtResource("4_uqtj4")
+skeleton = NodePath("../..")
+
+[node name="Door-wide-closed2" type="MeshInstance3D" parent="EndSegment"]
+transform = Transform3D(8.74228e-08, 2, 7.64274e-15, 2, -8.74228e-08, 1.74846e-07, 1.74846e-07, 0, -2, 0, 1.5, -2)
+mesh = ExtResource("4_uqtj4")
+skeleton = NodePath("../..")
+
+[node name="Walls" type="Node3D" parent="EndSegment"]
+
+[node name="Structure-corner-inner" type="MeshInstance3D" parent="EndSegment/Walls"]
+transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, -8, 0, -1)
+mesh = ExtResource("5_ym5jd")
+skeleton = NodePath("../../..")
+
+[node name="Structure-corner-inner2" type="MeshInstance3D" parent="EndSegment/Walls"]
+transform = Transform3D(2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 8, 0, -1)
+mesh = ExtResource("5_ym5jd")
+skeleton = NodePath("../../..")
+
+[node name="Structure-doorway-wide" type="MeshInstance3D" parent="EndSegment/Walls"]
+transform = Transform3D(-3, 0, 3.01992e-07, 0, 2, 0, -4.52987e-07, 0, -2, 0, 0, -1)
+mesh = ExtResource("6_d31vq")
+skeleton = NodePath("../../..")
+
+[node name="Structure-wall" type="MeshInstance3D" parent="EndSegment/Walls"]
+transform = Transform3D(-4, 0, -1.74846e-07, 0, 2, 0, 3.49691e-07, 0, -2, -5, 0, -1)
+mesh = ExtResource("2_vl6nm")
+skeleton = NodePath("../../..")
+
+[node name="Structure-wall2" type="MeshInstance3D" parent="EndSegment/Walls"]
+transform = Transform3D(-4, 0, -1.74846e-07, 0, 2, 0, 3.49691e-07, 0, -2, 5, 0, -1)
+mesh = ExtResource("2_vl6nm")
+skeleton = NodePath("../../..")
+
+[node name="Roof" type="Node3D" parent="EndSegment"]
+
+[node name="Top-large" type="MeshInstance3D" parent="EndSegment/Roof"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, -15, 6, -2)
+mesh = ExtResource("3_g6ani")
+skeleton = NodePath("../..")
+
+[node name="Top-large2" type="MeshInstance3D" parent="EndSegment/Roof"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 15, 6, -2)
+mesh = ExtResource("3_g6ani")
+skeleton = NodePath("../..")
+
+[node name="Top-large3" type="MeshInstance3D" parent="EndSegment/Roof"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 16, 15, 6, -20)
+mesh = ExtResource("3_g6ani")
+skeleton = NodePath("../..")
+
+[node name="Top-large4" type="MeshInstance3D" parent="EndSegment/Roof"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 16, -15, 6, -20)
+mesh = ExtResource("3_g6ani")
+skeleton = NodePath("../..")
+
+[node name="Top-large5" type="MeshInstance3D" parent="EndSegment/Roof"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 16, -7, 6, -20)
+mesh = ExtResource("3_g6ani")
+skeleton = NodePath("../..")
+
+[node name="Top-large6" type="MeshInstance3D" parent="EndSegment/Roof"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 16, 7, 6, -20)
+mesh = ExtResource("3_g6ani")
+skeleton = NodePath("../..")
+
+[node name="Top-large7" type="MeshInstance3D" parent="EndSegment/Roof"]
+transform = Transform3D(3.25, 0, 0, 0, 1, 0, 0, 0, 16, 0, 6, -20)
+mesh = ExtResource("3_g6ani")
+skeleton = NodePath("../..")
