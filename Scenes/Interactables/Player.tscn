@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhmhmvcgk7dfx"]
+
+[ext_resource type="Script" path="res://Scenes/Interactables/PlayerBody.gd" id="1_fcuqg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jcp0y"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_38gpn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5eb5p"]
+size = Vector3(0.5, 0.2, 0.2)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cr6ir"]
+radius = 0.1
+height = 0.75
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ijew2"]
+radius = 0.1
+height = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p2315"]
+radius = 0.1
+height = 1.0
+
+[node name="Player" type="Node3D"]
+
+[node name="Body" type="CharacterBody3D" parent="."]
+script = ExtResource("1_fcuqg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+shape = SubResource("CapsuleShape3D_jcp0y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
+mesh = SubResource("CapsuleMesh_38gpn")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639628, 0.507417)
+mesh = SubResource("BoxMesh_5eb5p")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.838052, 0.54559, 0, -0.54559, 0.838052, 0, 0, 0, 1, 0.633829, 0.784836, 0)
+mesh = SubResource("CapsuleMesh_cr6ir")
+skeleton = NodePath("../..")
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.792844, 1.11678, 0)
+node_a = NodePath("../Body")
+node_b = NodePath("../Arm")
+
+[node name="Arm" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.794603, 1.61138, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arm"]
+shape = SubResource("CapsuleShape3D_ijew2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arm"]
+mesh = SubResource("CapsuleMesh_p2315")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjmhctdlo6j6g"]
+
+[ext_resource type="Script" path="res://Scenes/UI/SubMenu.gd" id="1_86jh4"]
+[ext_resource type="Texture2D" uid="uid://cwsjqq15xr428" path="res://icon.svg" id="2_6ood7"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_86jh4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6ood7")
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Hey look! It's all the people who made stuff for this awesome epic game!!"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Menu" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Return to Menu"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]

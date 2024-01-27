@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl0jgoouy2d5q"]
+
+[ext_resource type="PackedScene" uid="uid://dhmhmvcgk7dfx" path="res://Scenes/Interactables/Player.tscn" id="1_rwcsa"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wu4yo"]
+height = 1.0
+radius = 15.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o5ou4"]
+albedo_color = Color(0.384314, 0.396078, 0.427451, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5dxfd"]
+material = SubResource("StandardMaterial3D_o5ou4")
+top_radius = 15.0
+bottom_radius = 10.0
+height = 1.0
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_wu4yo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("CylinderMesh_5dxfd")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48447, 0)
+omni_range = 11.8411
+omni_attenuation = 0.732041
+
+[node name="Player" parent="." instance=ExtResource("1_rwcsa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09457, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.40238, 11.1929)
