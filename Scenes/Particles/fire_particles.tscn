@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4b4itn4a5mhq"]
+
+[sub_resource type="Gradient" id="Gradient_holyo"]
+offsets = PackedFloat32Array(0, 0.68125, 1)
+colors = PackedColorArray(1, 0.273989, 0.21327, 1, 0.91038, 0.270973, 0.267161, 1, 0.931996, 0.566425, 0.432783, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6h0c3"]
+gradient = SubResource("Gradient_holyo")
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_cj644"]
+
+[sub_resource type="Curve" id="Curve_puff6"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.503937, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.20292), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4bm3x"]
+curve = SubResource("Curve_puff6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8jg57"]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.1
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
+directional_velocity_min = -0.1
+directional_velocity_max = 0.1
+directional_velocity_curve = SubResource("CurveXYZTexture_cj644")
+gravity = Vector3(0, 0, 0)
+tangential_accel_min = -0.5
+tangential_accel_max = 1.5
+scale_min = 0.7
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_4bm3x")
+color_ramp = SubResource("GradientTexture1D_6h0c3")
+hue_variation_min = -0.07
+hue_variation_max = 0.07
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h882h"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.521569)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pxrjn"]
+material = SubResource("StandardMaterial3D_h882h")
+radius = 0.05
+height = 0.1
+
+[node name="FireParticles" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 58
+lifetime = 1.7
+process_material = SubResource("ParticleProcessMaterial_8jg57")
+draw_pass_1 = SubResource("SphereMesh_pxrjn")
