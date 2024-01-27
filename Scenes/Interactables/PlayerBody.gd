@@ -9,6 +9,8 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 func _physics_process(delta):
+	if velocity.length() > 0 and is_on_floor():
+		$MonkeyFeet.pitch_scale = velocity.length()/5
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -24,7 +26,14 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if is_on_floor():
+			if not $MonkeyFeet.playing:
+				$MonkeyFeet.play()
+		else:
+			$MonkeyFeet.stop()
 	else:
+		if $MonkeyFeet.playing:
+			$MonkeyFeet.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 

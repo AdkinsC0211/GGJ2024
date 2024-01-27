@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://xlqoyw4ihgp"]
+
+[ext_resource type="PackedScene" uid="uid://c8nwwxl2fu258" path="res://LevelParts/Singles/hallway_segment.tscn" id="1_vevmv"]
+[ext_resource type="PackedScene" uid="uid://cfna2nvj4sr3b" path="res://LevelParts/Multi/hallway_doors.tscn" id="2_kede2"]
+[ext_resource type="PackedScene" uid="uid://ds231623qryop" path="res://LevelParts/Multi/hallway_windows_large.tscn" id="3_x58dl"]
+[ext_resource type="PackedScene" uid="uid://dhmhmvcgk7dfx" path="res://Scenes/Interactables/Player.tscn" id="4_qarpv"]
+[ext_resource type="PackedScene" uid="uid://hlmo83q1odvt" path="res://LevelParts/Singles/hallway_end.tscn" id="5_sykin"]
+
+[node name="SceneRoot" type="Node3D"]
+
+[node name="Geometry" type="Node" parent="."]
+
+[node name="Models" type="Node" parent="."]
+
+[node name="HallwaySegment8" parent="Models" instance=ExtResource("1_vevmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 32)
+
+[node name="HallwaySegment7" parent="Models" instance=ExtResource("1_vevmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 16)
+
+[node name="HallwaySegment" parent="Models" instance=ExtResource("1_vevmv")]
+
+[node name="HallwaySegment2" parent="Models" instance=ExtResource("1_vevmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -16)
+
+[node name="HallwaySegment3" parent="Models" instance=ExtResource("1_vevmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -32)
+
+[node name="Hallway_Doors" parent="Models" instance=ExtResource("2_kede2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -48)
+
+[node name="HallwaySegment4" parent="Models" instance=ExtResource("1_vevmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -64)
+
+[node name="Hallway_WindowsLarge" parent="Models" instance=ExtResource("3_x58dl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -80)
+
+[node name="HallwaySegment5" parent="Models" instance=ExtResource("1_vevmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -96)
+
+[node name="Hallway_WindowsLarge2" parent="Models" instance=ExtResource("3_x58dl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -112)
+
+[node name="HallwaySegment6" parent="Models" instance=ExtResource("1_vevmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -128)
+
+[node name="Hallway_WindowsLarge3" parent="Models" instance=ExtResource("3_x58dl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -144)
+
+[node name="Player" parent="." instance=ExtResource("4_qarpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03613, 0)
+
+[node name="HallwayEnd" parent="." instance=ExtResource("5_sykin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -160)
