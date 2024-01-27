@@ -25,9 +25,17 @@ func _unhandled_input(event):
 				temp.global_transform = $Gun.global_transform
 				temp.global_rotation_degrees.x += randf_range(-20, 20)
 				temp.global_rotation_degrees.z += randf_range(-20, 20)
+				temp.global_rotation_degrees.y += randf_range(-20, 20)
 			$FireTimer.start()
 			can_fire = false
+			$Gun/Blast.play()
 
 
 func _on_timer_timeout():
 	can_fire = true
+	$ReloadTimer.wait_time = 2
+	$ReloadTimer.start()
+
+
+func _on_reload_timer_timeout():
+	$Gun/Reload.play()
