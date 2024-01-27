@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://c4bdnmn3se5ni"]
+
+[ext_resource type="Script" path="res://AI_test.gd" id="1_8yl15"]
+[ext_resource type="PackedScene" uid="uid://bbdagba66kw1l" path="res://enemy.tscn" id="2_wk423"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i2kpj"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_vt6yi"]
+vertices = PackedVector3Array(-170.52, 0.3768, -140.525, -170.52, 0.3768, 140.475, 170.48, 0.3768, 140.475, 170.48, 0.3768, -140.525)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_mhswt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_707m4"]
+albedo_color = Color(0.0745098, 0.537255, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_y7pwi"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_xewj4"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0623674, -0.127776, 0.113613)
+script = ExtResource("1_8yl15")
+
+[node name="Monkey" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6368, -0.282909, 22.7494)
+mesh = SubResource("CapsuleMesh_i2kpj")
+
+[node name="Camera3D" type="Camera3D" parent="Monkey"]
+transform = Transform3D(0.69237, 0, 0.721543, 0, 1, 0, -0.721543, 0, 0.69237, 4.26194, 1.98521, 3.04023)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.41716, 0)
+navigation_mesh = SubResource("NavigationMesh_vt6yi")
+
+[node name="ground" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(342.04, 0, 0, 0, -0.2464, 0, 0, 0, 282.051, 0, -2.32267, 0)
+mesh = SubResource("BoxMesh_mhswt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_707m4")
+
+[node name="Enemy" parent="." instance=ExtResource("2_wk423")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10455, 1.87268, -4.66648)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_wk423")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10455, 1.87268, 12.5339)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_wk423")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.85104, 1.87268, -9.57193)
+
+[node name="Enemy4" parent="." instance=ExtResource("2_wk423")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.3805, 1.87268, 4.15325)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0245194, 0.999699, 0, -0.999699, 0.0245194, 0, 23.5261, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.63248, 0, 0, 0, 3.09264, 0, 0, 0, 4.96371, 15.1076, 0, 10.9536)
+mesh = SubResource("CylinderMesh_y7pwi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1.30893, 0, 0, 0, 1.6708, 0, 0, 0, 2.03795, 0, 0, 0)
+shape = SubResource("CylinderShape3D_xewj4")

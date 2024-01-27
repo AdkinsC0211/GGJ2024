@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbdagba66kw1l"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_s4dog"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ib35"]
+albedo_color = Color(0.694118, 0.0117647, 0.262745, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6o7x8"]
+material = SubResource("StandardMaterial3D_6ib35")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gavt8"]
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemies"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_s4dog")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119017, 0)
+mesh = SubResource("CapsuleMesh_6o7x8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.26823, 0, 0, 0, 1.21449, 0, 0, 0, 1.18422, 0, 0.119017, 0)
+shape = SubResource("CapsuleShape3D_gavt8")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 2.0
+path_height_offset = 0.1
+avoidance_enabled = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
