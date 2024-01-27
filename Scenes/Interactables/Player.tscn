@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dhmhmvcgk7dfx"]
 
 [ext_resource type="Script" path="res://Scenes/Interactables/PlayerBody.gd" id="1_fcuqg"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/MonkeFeet.ogg" id="2_i04yh"]
+[ext_resource type="AudioStream" uid="uid://bkaqksofhuqmr" path="res://Assets/Sounds/MonkeFeet.ogg" id="2_i04yh"]
 [ext_resource type="Script" path="res://Scenes/Interactables/Arm.gd" id="2_oxtl4"]
 [ext_resource type="AudioStream" uid="uid://glue3dmsa2nn" path="res://Assets/Sounds/Shotgun Blast.wav" id="3_h4xk8"]
 [ext_resource type="AudioStream" uid="uid://6qsrkyqg8nme" path="res://Assets/Sounds/Reload.wav" id="4_mgabb"]
