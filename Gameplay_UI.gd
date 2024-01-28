@@ -3,8 +3,6 @@ extends Control
 @onready var textRect: TextureRect = $TextureRect
 @onready var images = []
 
-@onready var myPrecious = $Player
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var texture
