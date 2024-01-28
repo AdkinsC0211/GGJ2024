@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c80c8yqxkpmrb"]
+[gd_scene load_steps=13 format=3 uid="uid://c80c8yqxkpmrb"]
 
 [ext_resource type="PackedScene" uid="uid://c8nwwxl2fu258" path="res://LevelParts/Singles/hallway_segment.tscn" id="1_x45a8"]
 [ext_resource type="PackedScene" uid="uid://cfna2nvj4sr3b" path="res://LevelParts/Multi/hallway_doors.tscn" id="2_j2a7d"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dqni4smjy7xiq" path="res://LevelParts/Props/box_stack_3.tscn" id="9_1il1c"]
 [ext_resource type="PackedScene" uid="uid://b1nsh57mucp8t" path="res://LevelParts/Props/box_stack_1.tscn" id="10_tpdc7"]
 [ext_resource type="PackedScene" uid="uid://d1rqbnc3fvjod" path="res://LevelParts/Props/room_convayor_1.tscn" id="11_ytin3"]
+[ext_resource type="PackedScene" uid="uid://d4gao4e54bo33" path="res://Scenes/Interactables/LevelTrigger.tscn" id="12_3l5tf"]
 
 [node name="SceneRoot" type="Node3D"]
 
@@ -221,3 +222,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.529
 
 [node name="BoxStack7" parent="Section 3" instance=ExtResource("8_mbaxs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.94052, 0.00555372, -110.867)
+
+[node name="Level End" parent="." instance=ExtResource("12_3l5tf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, 0.810201, -125.296)
+levelPath = ""
