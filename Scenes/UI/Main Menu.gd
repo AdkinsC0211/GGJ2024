@@ -8,11 +8,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _on_play_pressed():
-	get_tree().get_root().get_node("/root/Singleton").change_level("res://Scenes/Levels/TestLevel.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	get_tree().get_root().get_node("/root/Singleton").change_level("res://Scenes/Levels/Level_1.tscn")
+	get_tree().get_root().get_node("/root/Singleton").change_music("res://Assets/Sounds/science-inspirational-business-futuristic-documentary-powerful-music-184337.ogg")
 
 
 func _on_quit_pressed():

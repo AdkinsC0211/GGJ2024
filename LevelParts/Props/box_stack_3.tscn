@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqni4smjy7xiq"]
+
+[ext_resource type="ArrayMesh" uid="uid://b0k3io34iv8xx" path="res://Mesh/Box/box-large.obj" id="1_a85g8"]
+[ext_resource type="ArrayMesh" uid="uid://ctt86bubbi2os" path="res://Mesh/Box/box-long.obj" id="2_kpe3x"]
+[ext_resource type="ArrayMesh" uid="uid://ds433hbhhnvv1" path="res://Mesh/Box/box-small.obj" id="3_rkon8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ou604"]
+size = Vector3(2.25175, 1.5636, 2.24592)
+
+[node name="BoxStack3" type="Node3D"]
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="Box-large" type="MeshInstance3D" parent="Meshes"]
+mesh = ExtResource("1_a85g8")
+skeleton = NodePath("../../..")
+
+[node name="Box-large2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-0.0801989, 0, 0.996779, 0, 1, 0, -0.996779, 0, -0.0801989, -1.07952, 0, 0)
+mesh = ExtResource("1_a85g8")
+skeleton = NodePath("../../..")
+
+[node name="Box-large3" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.0442993, 0, -0.999018, 0, 1, 0, 0.999018, 0, 0.0442993, -0.0332992, 0, -1.08191)
+mesh = ExtResource("1_a85g8")
+skeleton = NodePath("../../..")
+
+[node name="Box-large4" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.0287415, 0, -0.999587, 0, 1, 0, 0.999587, 0, 0.0287415, -1.12578, -0.0213225, -1.15327)
+mesh = ExtResource("1_a85g8")
+skeleton = NodePath("../../..")
+
+[node name="Box-large5" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0.000506017, 0, 1, 0, -0.000506017, 0, 1, -0.0120944, 0.478123, -0.0377041)
+mesh = ExtResource("1_a85g8")
+skeleton = NodePath("../../..")
+
+[node name="Box-large6" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0.000506017, 0, 1, 0, -0.000506017, 0, 1, -1.0322, 0.478123, -0.0446914)
+mesh = ExtResource("1_a85g8")
+skeleton = NodePath("../../..")
+
+[node name="Box-large7" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(-0.0436889, 0, 0.999045, 0, 1, 0, -0.999045, 0, -0.0436889, -1.05417, 0.478123, -1.10061)
+mesh = ExtResource("1_a85g8")
+skeleton = NodePath("../../..")
+
+[node name="Box-large8" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.0951163, 0, 0.995466, 0, 1, 0, -0.995466, 0, 0.0951163, 0.0458385, 0.478123, -1.10755)
+mesh = ExtResource("1_a85g8")
+skeleton = NodePath("../../..")
+
+[node name="Box-long" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.956427, 0, 0.291971, 0, 1, 0, -0.291971, 0, 0.956427, -0.849304, 0.971066, -1.15204)
+mesh = ExtResource("2_kpe3x")
+skeleton = NodePath("../../..")
+
+[node name="Box-small" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.381377, 0, -0.92442, 0, 1, 0, 0.92442, 0, 0.381377, 0.0763049, 0.964096, -0.163759)
+mesh = ExtResource("3_rkon8")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.518852, 0.763245, -0.576519)
+shape = SubResource("BoxShape3D_ou604")

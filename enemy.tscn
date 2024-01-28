@@ -19,7 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119017, 0)
 mesh = SubResource("CapsuleMesh_6o7x8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.26823, 0, 0, 0, 1.21449, 0, 0, 0, 1.18422, 0, 0.119017, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119017, 0)
 shape = SubResource("CapsuleShape3D_gavt8")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

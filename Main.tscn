@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgurpblm2n7wg"]
+[gd_scene load_steps=5 format=3 uid="uid://cgurpblm2n7wg"]
 
 [ext_resource type="PackedScene" uid="uid://hreikcq7ogg" path="res://Scenes/UI/Main Menu.tscn" id="1_c3p3s"]
 [ext_resource type="PackedScene" uid="uid://b3gunk8sp07r" path="res://Scenes/UI/Pause Menu.tscn" id="2_7hihx"]
+[ext_resource type="AudioStream" uid="uid://ug6vunbrleti" path="res://Assets/Sounds/i-heart-you-so-169000.ogg" id="3_2463u"]
 
 [sub_resource type="Environment" id="Environment_t46l5"]
 
@@ -32,3 +33,6 @@ visible = false
 [node name="HUD" type="Node" parent="UI"]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2463u")
+volume_db = -12.0
+autoplay = true

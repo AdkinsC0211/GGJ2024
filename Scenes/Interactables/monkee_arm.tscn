@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1rgxinpab34d"]
+
+[ext_resource type="PackedScene" uid="uid://cp4g4ojbhwxqj" path="res://Assets/monkee_arm.glb" id="1_mfxnh"]
+
+[node name="monkee_arm" instance=ExtResource("1_mfxnh")]
+transform = Transform3D(0.75, 0, 0, 0, -3.27835e-08, 0.75, 0, -0.75, -3.27835e-08, 0, 0, 0)

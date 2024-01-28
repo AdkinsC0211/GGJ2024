@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctt86bubbi2os"
+path="res://.godot/imported/box-long.obj-f75b0d6fe91ae16edefdc60b134ef822.mesh"
+
+[deps]
+
+files=["res://.godot/imported/box-long.obj-f75b0d6fe91ae16edefdc60b134ef822.mesh"]
+
+source_file="res://Mesh/Box/box-long.obj"
+dest_files=["res://.godot/imported/box-long.obj-f75b0d6fe91ae16edefdc60b134ef822.mesh", "res://.godot/imported/box-long.obj-f75b0d6fe91ae16edefdc60b134ef822.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
