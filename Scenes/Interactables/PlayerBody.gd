@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@onready var myHealthbar = $Gameplay_UI
 
 const SPEED = 5.0
 var cur_speed = 0
@@ -50,6 +51,8 @@ func damage(amount):
 	health -= amount
 	if health <= 0:
 		kill()
+	else:
+		myHealthbar.health_changed(health, MAX_HEALTH)
 
 func kill():
 	$Camera3D.reparent(get_tree().get_root().get_node("Main").get_node("WorldRoot"), true)

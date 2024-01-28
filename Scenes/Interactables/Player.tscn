@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dfblgjqiy0epp" path="res://Assets/monkkee_body.glb" id="2_rwuve"]
 [ext_resource type="AudioStream" uid="uid://glue3dmsa2nn" path="res://Assets/Sounds/Shotgun Blast.wav" id="3_h4xk8"]
 [ext_resource type="AudioStream" uid="uid://6qsrkyqg8nme" path="res://Assets/Sounds/Reload.wav" id="4_mgabb"]
-[ext_resource type="PackedScene" uid="uid://dyqeo32amkeci" path="res://Scenes/Interactables/shotgun.tscn" id="6_pc7nb"]
-[ext_resource type="PackedScene" uid="uid://c1rgxinpab34d" path="res://Scenes/Interactables/monkee_arm.tscn" id="7_1ahwr"]
+[ext_resource type="PackedScene" path="res://Scenes/Interactables/shotgun.tscn" id="6_pc7nb"]
+[ext_resource type="PackedScene" path="res://Scenes/Interactables/monkee_arm.tscn" id="7_1ahwr"]
 [ext_resource type="AudioStream" uid="uid://dow1mfy0fyins" path="res://Assets/Sounds/GunSmack.wav" id="9_n4ley"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jcp0y"]

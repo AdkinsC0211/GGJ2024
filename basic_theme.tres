@@ -1,8 +1,8 @@
-[gd_resource type="Theme" load_steps=14 format=3 uid="uid://du4ftwp0yfp3m"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://dj01s4atnilii"]
 
-[ext_resource type="FontVariation" path="res://Englebert.tres" id="1_yhraj"]
+[ext_resource type="FontVariation" uid="uid://d2fyiojxkml75" path="res://Englebert.tres" id="1_yhraj"]
 [ext_resource type="Texture2D" uid="uid://cln3bqc7vwf8n" path="res://banana_slider.png" id="2_vtcv7"]
-[ext_resource type="StyleBox" path="res://bananaSlider.tres" id="3_dea6h"]
+[ext_resource type="StyleBox" uid="uid://c1lu7qlf8xv44" path="res://bananaSlider.tres" id="3_dea6h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hifv"]
 content_margin_left = 20.0
