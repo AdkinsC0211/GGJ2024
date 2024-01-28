@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3gxx72gc5jgx"
+path="res://.godot/imported/structure-window.obj-2c9540e708c565e4ebd7894b6fc9467d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/structure-window.obj-2c9540e708c565e4ebd7894b6fc9467d.mesh"]
+
+source_file="res://Mesh/Structure/structure-window.obj"
+dest_files=["res://.godot/imported/structure-window.obj-2c9540e708c565e4ebd7894b6fc9467d.mesh", "res://.godot/imported/structure-window.obj-2c9540e708c565e4ebd7894b6fc9467d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

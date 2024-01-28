@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds231623qryop"]
+[gd_scene load_steps=6 format=3 uid="uid://ds231623qryop"]
 
 [ext_resource type="ArrayMesh" uid="uid://t3bpj1881k1b" path="res://Mesh/floor-large.obj" id="1_aktuc"]
 [ext_resource type="ArrayMesh" uid="uid://bnhb5tyusb35w" path="res://Mesh/structure-wall.obj" id="2_vf68j"]
 [ext_resource type="ArrayMesh" uid="uid://33ll6hmbyht0" path="res://Mesh/structure-window-wide.obj" id="3_qvwb4"]
 [ext_resource type="ArrayMesh" uid="uid://dmow862rff26d" path="res://Mesh/top-large.obj" id="4_34nnp"]
+[ext_resource type="PackedScene" uid="uid://hicidewfvg88" path="res://LevelParts/collison.tscn" id="5_4oe8n"]
 
 [node name="Hallway_WindowsLarge" type="Node3D"]
 
@@ -166,3 +167,25 @@ skeleton = NodePath("../..")
 transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, 15, 6, 0)
 mesh = ExtResource("4_34nnp")
 skeleton = NodePath("../..")
+
+[node name="Collison" parent="." instance=ExtResource("5_4oe8n")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.48447, 4)
+omni_range = 11.8411
+omni_attenuation = 0.732041
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.48447, 4)
+omni_range = 11.8411
+omni_attenuation = 0.732041
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.48447, -4)
+omni_range = 11.8411
+omni_attenuation = 0.732041
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.48447, -4)
+omni_range = 11.8411
+omni_attenuation = 0.732041

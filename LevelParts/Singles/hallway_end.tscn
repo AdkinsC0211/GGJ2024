@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://hlmo83q1odvt"]
+[gd_scene load_steps=8 format=3 uid="uid://hlmo83q1odvt"]
 
 [ext_resource type="ArrayMesh" uid="uid://t3bpj1881k1b" path="res://Mesh/floor-large.obj" id="1_r3e2q"]
 [ext_resource type="ArrayMesh" uid="uid://bnhb5tyusb35w" path="res://Mesh/structure-wall.obj" id="2_vl6nm"]
 [ext_resource type="ArrayMesh" uid="uid://dmow862rff26d" path="res://Mesh/top-large.obj" id="3_g6ani"]
 [ext_resource type="ArrayMesh" uid="uid://biwcrds3gmibj" path="res://Mesh/door-wide-closed.obj" id="4_uqtj4"]
-[ext_resource type="ArrayMesh" uid="uid://cf4oi8l8fek2t" path="res://Mesh/structure-corner-inner.obj" id="5_ym5jd"]
+[ext_resource type="ArrayMesh" uid="uid://cf4oi8l8fek2t" path="res://Mesh/Structure/structure-corner-inner.obj" id="5_ym5jd"]
 [ext_resource type="ArrayMesh" uid="uid://d0lltqefbudhs" path="res://Mesh/structure-doorway-wide.obj" id="6_d31vq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_frysk"]
+size = Vector3(20, 0.423553, 19.3826)
 
 [node name="HallwayEnd" type="Node3D"]
 
@@ -116,3 +119,43 @@ skeleton = NodePath("../..")
 transform = Transform3D(3.25, 0, 0, 0, 1, 0, 0, 0, 16, 0, 6, -20)
 mesh = ExtResource("3_g6ani")
 skeleton = NodePath("../..")
+
+[node name="Collison" type="Node3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Collison"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collison/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
+shape = SubResource("BoxShape3D_frysk")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Collison"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -8, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collison/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
+shape = SubResource("BoxShape3D_frysk")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Collison"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collison/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
+shape = SubResource("BoxShape3D_frysk")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Collison"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collison/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
+shape = SubResource("BoxShape3D_frysk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6.48447, 4)
+omni_range = 11.8411
+omni_attenuation = 0.732041
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 6.48447, 4)
+omni_range = 11.8411
+omni_attenuation = 0.732041

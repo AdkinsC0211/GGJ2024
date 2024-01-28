@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhmhmvcgk7dfx"]
+[gd_scene load_steps=9 format=3 uid="uid://dhmhmvcgk7dfx"]
 
 [ext_resource type="Script" path="res://Scenes/Interactables/PlayerBody.gd" id="1_fcuqg"]
 [ext_resource type="Script" path="res://Scenes/Interactables/Arm.gd" id="2_oxtl4"]
@@ -6,9 +6,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jcp0y"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_38gpn"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_5eb5p"]
-size = Vector3(0.5, 0.2, 0.2)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_cr6ir"]
 radius = 0.1
@@ -31,18 +28,13 @@ size = Vector3(0.1, 0.5, 0.2)
 script = ExtResource("1_fcuqg")
 
 [node name="Camera3D" type="Camera3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 6)
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 10, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Body" groups=["player"]]
 shape = SubResource("CapsuleShape3D_jcp0y")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
 mesh = SubResource("CapsuleMesh_38gpn")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.639628, 0.507417)
-mesh = SubResource("BoxMesh_5eb5p")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Body"]

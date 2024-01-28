@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cfna2nvj4sr3b"]
+[gd_scene load_steps=8 format=3 uid="uid://cfna2nvj4sr3b"]
 
 [ext_resource type="ArrayMesh" uid="uid://dsd5aytke8rwt" path="res://Mesh/door-wide-half.obj" id="1_6svkd"]
 [ext_resource type="ArrayMesh" uid="uid://t3bpj1881k1b" path="res://Mesh/floor-large.obj" id="2_ds8gk"]
@@ -6,185 +6,210 @@
 [ext_resource type="ArrayMesh" uid="uid://bnhb5tyusb35w" path="res://Mesh/structure-wall.obj" id="4_vaoe7"]
 [ext_resource type="ArrayMesh" uid="uid://dmow862rff26d" path="res://Mesh/top-large.obj" id="5_kv18h"]
 [ext_resource type="ArrayMesh" uid="uid://biwcrds3gmibj" path="res://Mesh/door-wide-closed.obj" id="6_6l1xn"]
+[ext_resource type="PackedScene" uid="uid://hicidewfvg88" path="res://LevelParts/collison.tscn" id="7_nd3kb"]
 
 [node name="Hallway_Doors" type="Node3D"]
 
-[node name="Segment1" type="Node3D" parent="."]
+[node name="Geomatry" type="Node3D" parent="."]
+
+[node name="Segment1" type="Node3D" parent="Geomatry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
 
-[node name="Door-wide-half" type="MeshInstance3D" parent="Segment1"]
+[node name="Door-wide-half" type="MeshInstance3D" parent="Geomatry/Segment1"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
 mesh = ExtResource("1_6svkd")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Floor-large" type="MeshInstance3D" parent="Segment1"]
+[node name="Floor-large" type="MeshInstance3D" parent="Geomatry/Segment1"]
 transform = Transform3D(7, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("2_ds8gk")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Walls" type="Node3D" parent="Segment1"]
+[node name="Walls" type="Node3D" parent="Geomatry/Segment1"]
 
-[node name="Structure-doorway-wide" type="MeshInstance3D" parent="Segment1/Walls"]
+[node name="Structure-doorway-wide" type="MeshInstance3D" parent="Geomatry/Segment1/Walls"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
 mesh = ExtResource("3_xmxfs")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Structure-wall2" type="MeshInstance3D" parent="Segment1/Walls"]
+[node name="Structure-wall2" type="MeshInstance3D" parent="Geomatry/Segment1/Walls"]
 transform = Transform3D(3.01992e-07, 0, -2, 0, 2, 0, 4, 0, 1.50996e-07, -8, 0, 0)
 mesh = ExtResource("4_vaoe7")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Roof" type="Node3D" parent="Segment1"]
+[node name="Roof" type="Node3D" parent="Geomatry/Segment1"]
 
-[node name="Top-large" type="MeshInstance3D" parent="Segment1/Roof"]
+[node name="Top-large" type="MeshInstance3D" parent="Geomatry/Segment1/Roof"]
 transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, -15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
 
-[node name="Top-large2" type="MeshInstance3D" parent="Segment1/Roof"]
+[node name="Top-large2" type="MeshInstance3D" parent="Geomatry/Segment1/Roof"]
 transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, 15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
 
-[node name="HallwaySegment" type="Node3D" parent="."]
+[node name="HallwaySegment" type="Node3D" parent="Geomatry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="Floor-large" type="MeshInstance3D" parent="HallwaySegment"]
+[node name="Floor-large" type="MeshInstance3D" parent="Geomatry/HallwaySegment"]
 transform = Transform3D(7, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("2_ds8gk")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Walls" type="Node3D" parent="HallwaySegment"]
+[node name="Walls" type="Node3D" parent="Geomatry/HallwaySegment"]
 
-[node name="Structure-wall" type="MeshInstance3D" parent="HallwaySegment/Walls"]
+[node name="Structure-wall" type="MeshInstance3D" parent="Geomatry/HallwaySegment/Walls"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
 mesh = ExtResource("4_vaoe7")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Structure-wall2" type="MeshInstance3D" parent="HallwaySegment/Walls"]
+[node name="Structure-wall2" type="MeshInstance3D" parent="Geomatry/HallwaySegment/Walls"]
 transform = Transform3D(1.50996e-07, 0, -2, 0, 2, 0, 2, 0, 1.50996e-07, -8, 0, 0)
 mesh = ExtResource("4_vaoe7")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Roof" type="Node3D" parent="HallwaySegment"]
+[node name="Roof" type="Node3D" parent="Geomatry/HallwaySegment"]
 
-[node name="Top-large" type="MeshInstance3D" parent="HallwaySegment/Roof"]
+[node name="Top-large" type="MeshInstance3D" parent="Geomatry/HallwaySegment/Roof"]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
 
-[node name="Top-large2" type="MeshInstance3D" parent="HallwaySegment/Roof"]
+[node name="Top-large2" type="MeshInstance3D" parent="Geomatry/HallwaySegment/Roof"]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
 
-[node name="HallwaySegment2" type="Node3D" parent="."]
+[node name="HallwaySegment2" type="Node3D" parent="Geomatry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="Floor-large" type="MeshInstance3D" parent="HallwaySegment2"]
+[node name="Floor-large" type="MeshInstance3D" parent="Geomatry/HallwaySegment2"]
 transform = Transform3D(7, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("2_ds8gk")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Walls" type="Node3D" parent="HallwaySegment2"]
+[node name="Walls" type="Node3D" parent="Geomatry/HallwaySegment2"]
 
-[node name="Structure-wall" type="MeshInstance3D" parent="HallwaySegment2/Walls"]
+[node name="Structure-wall" type="MeshInstance3D" parent="Geomatry/HallwaySegment2/Walls"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
 mesh = ExtResource("4_vaoe7")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Structure-wall2" type="MeshInstance3D" parent="HallwaySegment2/Walls"]
+[node name="Structure-wall2" type="MeshInstance3D" parent="Geomatry/HallwaySegment2/Walls"]
 transform = Transform3D(1.50996e-07, 0, -2, 0, 2, 0, 2, 0, 1.50996e-07, -8, 0, 0)
 mesh = ExtResource("4_vaoe7")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Roof" type="Node3D" parent="HallwaySegment2"]
+[node name="Roof" type="Node3D" parent="Geomatry/HallwaySegment2"]
 
-[node name="Top-large" type="MeshInstance3D" parent="HallwaySegment2/Roof"]
+[node name="Top-large" type="MeshInstance3D" parent="Geomatry/HallwaySegment2/Roof"]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
 
-[node name="Top-large2" type="MeshInstance3D" parent="HallwaySegment2/Roof"]
+[node name="Top-large2" type="MeshInstance3D" parent="Geomatry/HallwaySegment2/Roof"]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
 
-[node name="Segment2" type="Node3D" parent="."]
+[node name="Segment2" type="Node3D" parent="Geomatry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="HallwaySegment_2" type="Node3D" parent="."]
+[node name="HallwaySegment_2" type="Node3D" parent="Geomatry"]
 
-[node name="Door-wide-closed" type="MeshInstance3D" parent="HallwaySegment_2"]
+[node name="Door-wide-closed" type="MeshInstance3D" parent="Geomatry/HallwaySegment_2"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
 mesh = ExtResource("6_6l1xn")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Floor-large" type="MeshInstance3D" parent="HallwaySegment_2"]
+[node name="Floor-large" type="MeshInstance3D" parent="Geomatry/HallwaySegment_2"]
 transform = Transform3D(7, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("2_ds8gk")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Walls" type="Node3D" parent="HallwaySegment_2"]
+[node name="Walls" type="Node3D" parent="Geomatry/HallwaySegment_2"]
 
-[node name="Structure-doorway-wide" type="MeshInstance3D" parent="HallwaySegment_2/Walls"]
+[node name="Structure-doorway-wide" type="MeshInstance3D" parent="Geomatry/HallwaySegment_2/Walls"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
 mesh = ExtResource("3_xmxfs")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Structure-wall2" type="MeshInstance3D" parent="HallwaySegment_2/Walls"]
+[node name="Structure-wall2" type="MeshInstance3D" parent="Geomatry/HallwaySegment_2/Walls"]
 transform = Transform3D(3.01992e-07, 0, -2, 0, 2, 0, 4, 0, 1.50996e-07, -8, 0, 0)
 mesh = ExtResource("4_vaoe7")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Roof" type="Node3D" parent="HallwaySegment_2"]
+[node name="Roof" type="Node3D" parent="Geomatry/HallwaySegment_2"]
 
-[node name="Top-large" type="MeshInstance3D" parent="HallwaySegment_2/Roof"]
+[node name="Top-large" type="MeshInstance3D" parent="Geomatry/HallwaySegment_2/Roof"]
 transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, -15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
 
-[node name="Top-large2" type="MeshInstance3D" parent="HallwaySegment_2/Roof"]
+[node name="Top-large2" type="MeshInstance3D" parent="Geomatry/HallwaySegment_2/Roof"]
 transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, 15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
 
-[node name="HallwaySegment3" type="Node3D" parent="."]
+[node name="HallwaySegment3" type="Node3D" parent="Geomatry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="HallwaySegment_4" type="Node3D" parent="."]
+[node name="HallwaySegment_4" type="Node3D" parent="Geomatry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
 
-[node name="Door-wide-closed" type="MeshInstance3D" parent="HallwaySegment_4"]
+[node name="Door-wide-closed" type="MeshInstance3D" parent="Geomatry/HallwaySegment_4"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
 mesh = ExtResource("6_6l1xn")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Floor-large" type="MeshInstance3D" parent="HallwaySegment_4"]
+[node name="Floor-large" type="MeshInstance3D" parent="Geomatry/HallwaySegment_4"]
 transform = Transform3D(7, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("2_ds8gk")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../../../..")
 
-[node name="Walls" type="Node3D" parent="HallwaySegment_4"]
+[node name="Walls" type="Node3D" parent="Geomatry/HallwaySegment_4"]
 
-[node name="Structure-doorway-wide" type="MeshInstance3D" parent="HallwaySegment_4/Walls"]
+[node name="Structure-doorway-wide" type="MeshInstance3D" parent="Geomatry/HallwaySegment_4/Walls"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
 mesh = ExtResource("3_xmxfs")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Structure-wall2" type="MeshInstance3D" parent="HallwaySegment_4/Walls"]
+[node name="Structure-wall2" type="MeshInstance3D" parent="Geomatry/HallwaySegment_4/Walls"]
 transform = Transform3D(3.01992e-07, 0, -2, 0, 2, 0, 4, 0, 1.50996e-07, -8, 0, 0)
 mesh = ExtResource("4_vaoe7")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Roof" type="Node3D" parent="HallwaySegment_4"]
+[node name="Roof" type="Node3D" parent="Geomatry/HallwaySegment_4"]
 
-[node name="Top-large" type="MeshInstance3D" parent="HallwaySegment_4/Roof"]
+[node name="Top-large" type="MeshInstance3D" parent="Geomatry/HallwaySegment_4/Roof"]
 transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, -15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
 
-[node name="Top-large2" type="MeshInstance3D" parent="HallwaySegment_4/Roof"]
+[node name="Top-large2" type="MeshInstance3D" parent="Geomatry/HallwaySegment_4/Roof"]
 transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, 15, 6, 0)
 mesh = ExtResource("5_kv18h")
 skeleton = NodePath("../..")
+
+[node name="Collison" parent="." instance=ExtResource("7_nd3kb")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.48447, 4)
+omni_range = 11.8411
+omni_attenuation = 0.732041
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.48447, 4)
+omni_range = 11.8411
+omni_attenuation = 0.732041
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.48447, -4)
+omni_range = 11.8411
+omni_attenuation = 0.732041
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.48447, -4)
+omni_range = 11.8411
+omni_attenuation = 0.732041

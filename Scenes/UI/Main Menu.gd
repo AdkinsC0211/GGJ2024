@@ -12,7 +12,7 @@ func _process(_delta):
 
 
 func _on_play_pressed():
-	get_tree().get_root().get_node("/root/Singleton").change_level("res://Scenes/Levels/TestLevel.tscn")
+	get_tree().get_root().get_node("/root/Singleton").change_level("res://Scenes/Levels/Level_1.tscn")
 
 
 func _on_quit_pressed():
