@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds231623qryop"]
+[gd_scene load_steps=7 format=3 uid="uid://ds231623qryop"]
 
-[ext_resource type="ArrayMesh" uid="uid://t3bpj1881k1b" path="res://Mesh/floor-large.obj" id="1_aktuc"]
-[ext_resource type="ArrayMesh" uid="uid://bnhb5tyusb35w" path="res://Mesh/structure-wall.obj" id="2_vf68j"]
-[ext_resource type="ArrayMesh" uid="uid://33ll6hmbyht0" path="res://Mesh/structure-window-wide.obj" id="3_qvwb4"]
-[ext_resource type="ArrayMesh" uid="uid://dmow862rff26d" path="res://Mesh/top-large.obj" id="4_34nnp"]
+[ext_resource type="ArrayMesh" uid="uid://t3bpj1881k1b" path="res://Mesh/Other/floor-large.obj" id="1_aktuc"]
+[ext_resource type="ArrayMesh" uid="uid://bnhb5tyusb35w" path="res://Mesh/Structure/structure-wall.obj" id="2_vf68j"]
+[ext_resource type="ArrayMesh" uid="uid://33ll6hmbyht0" path="res://Mesh/Structure/structure-window-wide.obj" id="3_qvwb4"]
+[ext_resource type="ArrayMesh" uid="uid://dmow862rff26d" path="res://Mesh/Other/top-large.obj" id="4_34nnp"]
 [ext_resource type="PackedScene" uid="uid://hicidewfvg88" path="res://LevelParts/collison.tscn" id="5_4oe8n"]
+[ext_resource type="ArrayMesh" uid="uid://5lblbhpqwrrw" path="res://Mesh/Other/lampSquareCeiling.obj" id="6_awemc"]
 
 [node name="Hallway_WindowsLarge" type="Node3D"]
 
@@ -31,12 +32,7 @@ skeleton = NodePath("../../../..")
 [node name="Roof" type="Node3D" parent="Segment1"]
 
 [node name="Top-large" type="MeshInstance3D" parent="Segment1/Roof"]
-transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, -15, 6, 0)
-mesh = ExtResource("4_34nnp")
-skeleton = NodePath("../..")
-
-[node name="Top-large2" type="MeshInstance3D" parent="Segment1/Roof"]
-transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, 15, 6, 0)
+transform = Transform3D(9.2, -1.52855e-14, 3.49691e-07, 7.03132e-14, -2, -1.74846e-07, 1.60858e-06, 1.74846e-07, -2, -1.13687e-13, 6, 1.43051e-06)
 mesh = ExtResource("4_34nnp")
 skeleton = NodePath("../..")
 
@@ -63,12 +59,7 @@ skeleton = NodePath("../../../..")
 [node name="Roof" type="Node3D" parent="Segment2"]
 
 [node name="Top-large" type="MeshInstance3D" parent="Segment2/Roof"]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 0)
-mesh = ExtResource("4_34nnp")
-skeleton = NodePath("../..")
-
-[node name="Top-large2" type="MeshInstance3D" parent="Segment2/Roof"]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 0)
+transform = Transform3D(9.2, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 6, 0)
 mesh = ExtResource("4_34nnp")
 skeleton = NodePath("../..")
 
@@ -95,12 +86,7 @@ skeleton = NodePath("../../../..")
 [node name="Roof" type="Node3D" parent="Segment3"]
 
 [node name="Top-large" type="MeshInstance3D" parent="Segment3/Roof"]
-transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, -15, 6, 0)
-mesh = ExtResource("4_34nnp")
-skeleton = NodePath("../..")
-
-[node name="Top-large2" type="MeshInstance3D" parent="Segment3/Roof"]
-transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, 15, 6, 0)
+transform = Transform3D(9.2, -1.52855e-14, 3.49691e-07, 7.03132e-14, -2, -1.74846e-07, 1.60858e-06, 1.74846e-07, -2, -1.14641e-13, 6, 1.31134e-06)
 mesh = ExtResource("4_34nnp")
 skeleton = NodePath("../..")
 
@@ -127,12 +113,7 @@ skeleton = NodePath("../../../..")
 [node name="Roof" type="Node3D" parent="Segment4"]
 
 [node name="Top-large" type="MeshInstance3D" parent="Segment4/Roof"]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 0)
-mesh = ExtResource("4_34nnp")
-skeleton = NodePath("../..")
-
-[node name="Top-large2" type="MeshInstance3D" parent="Segment4/Roof"]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 0)
+transform = Transform3D(9.2, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 6, 0)
 mesh = ExtResource("4_34nnp")
 skeleton = NodePath("../..")
 
@@ -159,33 +140,44 @@ skeleton = NodePath("../../../..")
 [node name="Roof" type="Node3D" parent="Segment5"]
 
 [node name="Top-large" type="MeshInstance3D" parent="Segment5/Roof"]
-transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, -15, 6, 0)
-mesh = ExtResource("4_34nnp")
-skeleton = NodePath("../..")
-
-[node name="Top-large2" type="MeshInstance3D" parent="Segment5/Roof"]
-transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 2, 15, 6, 0)
+transform = Transform3D(9.2, -1.52855e-14, 3.49691e-07, 7.03132e-14, -2, -1.74846e-07, 1.60858e-06, 1.74846e-07, -2, -1.13687e-13, 6, 1.43051e-06)
 mesh = ExtResource("4_34nnp")
 skeleton = NodePath("../..")
 
 [node name="Collison" parent="." instance=ExtResource("5_4oe8n")]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.48447, 4)
+[node name="LampSquareCeiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 5, 4)
+mesh = ExtResource("6_awemc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LampSquareCeiling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.05)
 omni_range = 11.8411
 omni_attenuation = 0.732041
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.48447, 4)
+[node name="LampSquareCeiling2" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 5, 4)
+mesh = ExtResource("6_awemc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LampSquareCeiling2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.05)
 omni_range = 11.8411
 omni_attenuation = 0.732041
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4.48447, -4)
+[node name="LampSquareCeiling3" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 5, -4)
+mesh = ExtResource("6_awemc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LampSquareCeiling3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.05)
 omni_range = 11.8411
 omni_attenuation = 0.732041
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4.48447, -4)
+[node name="LampSquareCeiling4" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 5, -4)
+mesh = ExtResource("6_awemc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="LampSquareCeiling4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.05)
 omni_range = 11.8411
 omni_attenuation = 0.732041

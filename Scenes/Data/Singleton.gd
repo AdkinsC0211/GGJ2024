@@ -71,5 +71,7 @@ func pause():
 	get_tree().paused = !get_tree().paused
 	if get_tree().paused:
 		get_tree().get_root().get_node("Main").get_node("UI").get_node("Pause").get_node("PauseMenu").show()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		get_tree().get_root().get_node("Main").get_node("UI").get_node("Pause").get_node("PauseMenu").hide()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
