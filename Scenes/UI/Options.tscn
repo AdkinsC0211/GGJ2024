@@ -1,0 +1,185 @@
+[gd_scene load_steps=11 format=3 uid="uid://ppf8y3txu6g1"]
+
+[ext_resource type="Texture2D" uid="uid://gxy20leyrg21" path="res://wooden-background.jpg" id="1_cr6bf"]
+[ext_resource type="FontVariation" uid="uid://ced8kevhbw37a" path="res://BananaFont.tres" id="2_i74mr"]
+[ext_resource type="Texture2D" uid="uid://cln3bqc7vwf8n" path="res://banana_slider.png" id="3_aimk8"]
+[ext_resource type="FontVariation" uid="uid://d2fyiojxkml75" path="res://Englebert.tres" id="3_jupe2"]
+[ext_resource type="StyleBox" uid="uid://c1lu7qlf8xv44" path="res://bananaSlider.tres" id="3_yijne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xx3p"]
+atlas = ExtResource("3_aimk8")
+region = Rect2(11, 9, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2awqs"]
+resource_local_to_scene = true
+atlas = ExtResource("3_aimk8")
+region = Rect2(57, 39, 6, 9)
+
+[sub_resource type="ImageTexture" id="ImageTexture_x6oot"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_fbm0l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yvher"]
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.5
+offset_top = -67.0
+offset_right = 15.5
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cr6bf")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0.729412, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("2_i74mr")
+theme_override_font_sizes/font_size = 100
+text = "Options"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MasterBox" type="MarginContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer/MasterBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Banana" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/MasterBox/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3xx3p")
+expand_mode = 5
+
+[node name="Master Volume Slider" type="HSlider" parent="CenterContainer/VBoxContainer/VBoxContainer/MasterBox/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("AtlasTexture_2awqs")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_2awqs")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_x6oot")
+theme_override_icons/tick = SubResource("ImageTexture_fbm0l")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_yvher")
+theme_override_styles/grabber_area_highlight = ExtResource("3_yijne")
+step = 10.0
+tick_count = 11
+
+[node name="Master Volume" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.776471, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.568627)
+theme_override_fonts/font = ExtResource("3_jupe2")
+theme_override_font_sizes/font_size = 25
+text = "Master Volume
+"
+vertical_alignment = 1
+
+[node name="SFXBox" type="MarginContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer/SFXBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Banana" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/SFXBox/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3xx3p")
+expand_mode = 5
+
+[node name="SFX Volume Slider" type="HSlider" parent="CenterContainer/VBoxContainer/VBoxContainer/SFXBox/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("AtlasTexture_2awqs")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_2awqs")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_x6oot")
+theme_override_icons/tick = SubResource("ImageTexture_fbm0l")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_yvher")
+theme_override_styles/grabber_area_highlight = ExtResource("3_yijne")
+step = 10.0
+tick_count = 11
+
+[node name="SFX Volume" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.776471, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.568627)
+theme_override_fonts/font = ExtResource("3_jupe2")
+theme_override_font_sizes/font_size = 25
+text = "SFX Volume
+"
+vertical_alignment = 1
+
+[node name="MusicBox" type="MarginContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer/MusicBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Banana" type="TextureRect" parent="CenterContainer/VBoxContainer/VBoxContainer/MusicBox/HBoxContainer2"]
+texture_filter = 1
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+texture = SubResource("AtlasTexture_3xx3p")
+expand_mode = 5
+
+[node name="Music Volume Slider" type="HSlider" parent="CenterContainer/VBoxContainer/VBoxContainer/MusicBox/HBoxContainer2"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("AtlasTexture_2awqs")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_2awqs")
+theme_override_icons/grabber_disabled = SubResource("ImageTexture_x6oot")
+theme_override_icons/tick = SubResource("ImageTexture_fbm0l")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_yvher")
+theme_override_styles/grabber_area_highlight = ExtResource("3_yijne")
+step = 10.0
+tick_count = 11
+
+[node name="Music Volume" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.945098, 0.776471, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.568627)
+theme_override_fonts/font = ExtResource("3_jupe2")
+theme_override_font_sizes/font_size = 25
+text = "Music Volume
+"
+vertical_alignment = 1

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://hreikcq7ogg"]
+[gd_scene load_steps=5 format=3 uid="uid://hreikcq7ogg"]
 
 [ext_resource type="Script" path="res://Scenes/UI/Main Menu.gd" id="1_3utnb"]
-[ext_resource type="Texture2D" uid="uid://cwsjqq15xr428" path="res://icon.svg" id="2_cjdgr"]
+[ext_resource type="Theme" uid="uid://dj01s4atnilii" path="res://basic_theme.tres" id="1_yhcjn"]
+[ext_resource type="FontVariation" uid="uid://ced8kevhbw37a" path="res://BananaFont.tres" id="3_m1pcl"]
+[ext_resource type="Texture2D" uid="uid://gxy20leyrg21" path="res://wooden-background.jpg" id="3_splo3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_yhcjn")
 script = ExtResource("1_3utnb")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -17,10 +20,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -67.0
+offset_right = -1.0
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_cjdgr")
-stretch_mode = 6
+texture = ExtResource("3_splo3")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -35,29 +43,43 @@ layout_mode = 2
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "REALLY COOL GAME!!!!!"
+theme_override_colors/font_color = Color(0.929412, 0.729412, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("3_m1pcl")
+theme_override_font_sizes/font_size = 100
+text = "Me and My Monke"
 
-[node name="Play" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "PLAY"
 
-[node name="Controls" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Controls" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Controls"
 
-[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Settings?"
 
-[node name="Credits" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Credits" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Credits"
 
-[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

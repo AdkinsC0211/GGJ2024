@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://ced8kevhbw37a"]
+
+[ext_resource type="FontFile" uid="uid://bnknr7si18x5n" path="res://Bananasplit-oMpz.ttf" id="1_rqpfq"]
+
+[resource]
+base_font = ExtResource("1_rqpfq")

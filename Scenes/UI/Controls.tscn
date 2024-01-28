@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://342e8mkqr3sy"]
+[gd_scene load_steps=4 format=3 uid="uid://342e8mkqr3sy"]
 
 [ext_resource type="Script" path="res://Scenes/UI/SubMenu.gd" id="1_igjec"]
-[ext_resource type="Texture2D" uid="uid://cwsjqq15xr428" path="res://icon.svg" id="2_78dnb"]
+[ext_resource type="Theme" uid="uid://dj01s4atnilii" path="res://basic_theme.tres" id="1_pxkn2"]
+[ext_resource type="Texture2D" uid="uid://gxy20leyrg21" path="res://wooden-background.jpg" id="3_elr0j"]
 
 [node name="Controls" type="Control"]
 layout_mode = 3
@@ -10,23 +11,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_pxkn2")
 script = ExtResource("1_igjec")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -17.5
+offset_top = -67.0
+offset_right = 15.5
+offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_78dnb")
-stretch_mode = 6
+texture = ExtResource("3_elr0j")
+expand_mode = 3
+stretch_mode = 4
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.5
+offset_top = -232.5
+offset_right = 245.5
+offset_bottom = 232.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -34,11 +47,17 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Title" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.575, 300)
 layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]Press buttons, 
+
 kill nanner, 
+
 eat nanner, 
+
 win."
 fit_content = true
 autowrap_mode = 0
