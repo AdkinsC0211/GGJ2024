@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv3qvc7gb3xkk"]
+
+[ext_resource type="Script" path="res://gameover.gd" id="1_7oclu"]
+[ext_resource type="Texture2D" uid="uid://cfv6s4ulakuxd" path="res://ComfyUI_temp_eqrjn_00008_.png" id="2_e4dse"]
+[ext_resource type="Texture2D" uid="uid://dml8ns66dvpgs" path="res://beautiful-shining-stars-night-sky.jpg" id="3_o5tr3"]
+[ext_resource type="AudioStream" uid="uid://dyos4nlpteowp" path="res://Monkey - Sound Effect.wav" id="4_0if0y"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7uwhm"]
+
+[node name="gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7oclu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(2.24913, 1.27408)
+texture = ExtResource("2_e4dse")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_top = 437.0
+offset_right = 5043.0
+offset_bottom = 3799.0
+scale = Vector2(0.0467014, 0.0634688)
+texture = ExtResource("3_o5tr3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 454.0
+offset_right = 127.0
+offset_bottom = 555.0
+scale = Vector2(1.66798, 1.87382)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+material = SubResource("CanvasItemMaterial_7uwhm")
+layout_mode = 2
+text = "Start Again"
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Click me!"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 308.0
+offset_top = -3.0
+offset_right = 546.0
+offset_bottom = 20.0
+scale = Vector2(2.3524, 4.75534)
+text = "OO-OO-HOo-Hoo-wee-hah-hah"
+
+[node name="Monkey" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_0if0y")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_button_3_pressed"]
