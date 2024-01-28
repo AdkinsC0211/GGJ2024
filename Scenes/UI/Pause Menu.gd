@@ -14,11 +14,13 @@ func _process(_delta):
 
 func _on_resume_pressed():
 	get_tree().get_root().get_node("/root/Singleton").pause()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _on_main_menu_pressed():
 	get_tree().get_root().get_node("/root/Singleton").change_menu("res://Scenes/UI/Main Menu.tscn")
 	get_tree().get_root().get_node("/root/Singleton").pause()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _on_quit_pressed():
