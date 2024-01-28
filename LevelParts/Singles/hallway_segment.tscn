@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8nwwxl2fu258"]
+[gd_scene load_steps=6 format=3 uid="uid://c8nwwxl2fu258"]
 
-[ext_resource type="ArrayMesh" uid="uid://t3bpj1881k1b" path="res://Mesh/floor-large.obj" id="1_c2307"]
-[ext_resource type="ArrayMesh" uid="uid://bnhb5tyusb35w" path="res://Mesh/structure-wall.obj" id="2_n4m42"]
-[ext_resource type="ArrayMesh" uid="uid://dmow862rff26d" path="res://Mesh/top-large.obj" id="3_wspvt"]
+[ext_resource type="ArrayMesh" uid="uid://t3bpj1881k1b" path="res://Mesh/Other/floor-large.obj" id="1_c2307"]
+[ext_resource type="ArrayMesh" uid="uid://bnhb5tyusb35w" path="res://Mesh/Structure/structure-wall.obj" id="2_n4m42"]
+[ext_resource type="ArrayMesh" uid="uid://dmow862rff26d" path="res://Mesh/Other/top-large.obj" id="3_wspvt"]
 [ext_resource type="PackedScene" uid="uid://hicidewfvg88" path="res://LevelParts/collison.tscn" id="4_seo5d"]
+[ext_resource type="ArrayMesh" uid="uid://5lblbhpqwrrw" path="res://Mesh/Other/lampSquareCeiling.obj" id="5_g8jo1"]
 
 [node name="HallwaySegment" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, 0)
@@ -28,34 +29,48 @@ skeleton = NodePath("../../../..")
 [node name="Roof" type="Node3D" parent="."]
 
 [node name="Top-large" type="MeshInstance3D" parent="Roof"]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6, 0)
-mesh = ExtResource("3_wspvt")
-skeleton = NodePath("../..")
-
-[node name="Top-large2" type="MeshInstance3D" parent="Roof"]
-transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 15, 6, 0)
+transform = Transform3D(-9.2, 8.74228e-08, 0, -8.0429e-07, -1, 0, 0, 0, 1, 0, 6, 0)
 mesh = ExtResource("3_wspvt")
 skeleton = NodePath("../..")
 
 [node name="Collison" parent="." instance=ExtResource("4_seo5d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.124744, 0, 0, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.125, 4, 4.48447, 0.5)
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="LampSquareCeiling" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 5, 4)
+mesh = ExtResource("5_g8jo1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D/LampSquareCeiling"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.05)
 omni_range = 11.8411
 omni_attenuation = 0.732041
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.125, -4, 4.48447, 0.5)
+[node name="LampSquareCeiling2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 5, 4)
+mesh = ExtResource("5_g8jo1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D/LampSquareCeiling2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.05)
 omni_range = 11.8411
 omni_attenuation = 0.732041
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.125, 4, 4.48447, -0.5)
+[node name="LampSquareCeiling3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 4, 5, -4)
+mesh = ExtResource("5_g8jo1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D/LampSquareCeiling3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.05)
 omni_range = 11.8411
 omni_attenuation = 0.732041
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.125, -4, 4.48447, -0.5)
+[node name="LampSquareCeiling4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -4, 5, -4)
+mesh = ExtResource("5_g8jo1")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Node3D/LampSquareCeiling4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0.05)
 omni_range = 11.8411
 omni_attenuation = 0.732041

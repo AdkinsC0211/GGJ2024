@@ -1,5 +1,6 @@
 extends Node
 
+@export var folderPath = "path here"
 @export var levelPath = "path here"
 
 
