@@ -1,4 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4b4itn4a5mhq"]
+[gd_scene load_steps=10 format=3 uid="uid://c4b4itn4a5mhq"]
+
+[ext_resource type="AudioStream" uid="uid://c7ros176dj8k" path="res://Assets/Sounds/Fire.ogg" id="1_rndqu"]
 
 [sub_resource type="Gradient" id="Gradient_holyo"]
 offsets = PackedFloat32Array(0, 0.68125, 1)
@@ -54,3 +56,7 @@ amount = 58
 lifetime = 1.7
 process_material = SubResource("ParticleProcessMaterial_8jg57")
 draw_pass_1 = SubResource("SphereMesh_pxrjn")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_rndqu")
+autoplay = true

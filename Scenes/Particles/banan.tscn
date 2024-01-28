@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://gd6fux5cbo7n"]
+
+[ext_resource type="AudioStream" uid="uid://cf65u1dbddrf2" path="res://Assets/Sounds/BananaHurt.wav" id="1_m5k1d"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6rw2h"]
+lifetime_randomness = 0.34
+radial_velocity_max = 24.09
+linear_accel_max = 20.55
+radial_accel_max = 31.32
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jeuop"]
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(1, 1, 0.396078, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_w53e5"]
+material = SubResource("StandardMaterial3D_jeuop")
+
+[node name="Banan" type="GPUParticles3D"]
+explosiveness = 0.9
+randomness = 0.2
+visibility_aabb = AABB(-0.380713, -0.367179, -0.363583, 0.761426, 0.734358, 0.727166)
+trail_lifetime = 1.51
+process_material = SubResource("ParticleProcessMaterial_6rw2h")
+draw_pass_1 = SubResource("SphereMesh_w53e5")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_m5k1d")
+autoplay = true

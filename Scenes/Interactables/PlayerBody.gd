@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
+var cur_speed = 0
 const JUMP_VELOCITY = 4.5
 
 const MAX_HEALTH = 100
@@ -52,3 +53,7 @@ func kill():
 	get_tree().get_root().get_node("/root/Singleton").play_global("res://Assets/Sounds/MonkeDie.wav")
 	get_tree().get_root().get_node("/root/Singleton").play_effect("res://Scenes/Particles/fire_particles.tscn", global_transform.origin)
 	get_parent().queue_free()
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		rotate_y(deg_to_rad(-event.relative.x / 10))

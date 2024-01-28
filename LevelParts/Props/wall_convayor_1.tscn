@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4dvgturew73h"]
+[gd_scene load_steps=9 format=3 uid="uid://c4dvgturew73h"]
 
 [ext_resource type="ArrayMesh" uid="uid://ct4g5vkc3btwy" path="res://Mesh/Conveyor/conveyor-long-stripe-sides.obj" id="1_5euyq"]
 [ext_resource type="ArrayMesh" uid="uid://cq24o05elyunu" path="res://Mesh/Covers/cover-stripe.obj" id="2_5shkf"]
@@ -8,7 +8,10 @@
 [ext_resource type="ArrayMesh" uid="uid://b0k3io34iv8xx" path="res://Mesh/Box/box-large.obj" id="6_wyjai"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dyh1m"]
-size = Vector3(11.9667, 2.42096, 2.29634)
+size = Vector3(5.97656, 2.42096, 2.29634)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k1aax"]
+size = Vector3(6.49939, 1.39355, 1.97076)
 
 [node name="Wall Convayor" type="Node3D"]
 
@@ -92,5 +95,9 @@ skeleton = NodePath("../..")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0110645, 1.19193, -0.0254717)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.984, 1.19193, -0.0254717)
 shape = SubResource("BoxShape3D_dyh1m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74969, 0.523998, -0.00967407)
+shape = SubResource("BoxShape3D_k1aax")
