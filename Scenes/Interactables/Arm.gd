@@ -60,3 +60,7 @@ func _on_speech_cooldown_timeout():
 
 func _on_le_monk_asmr_finished():
 	$SpeechCooldown.start()
+
+func _on_area_3d_body_entered(body):
+	if not body.is_in_group("player") and not body.is_in_group("enemies"):
+		$clack.play()
