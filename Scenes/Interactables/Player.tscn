@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dhmhmvcgk7dfx"]
+[gd_scene load_steps=17 format=3 uid="uid://dhmhmvcgk7dfx"]
 
 [ext_resource type="Script" path="res://Scenes/Interactables/PlayerBody.gd" id="1_fcuqg"]
+[ext_resource type="PackedScene" uid="uid://dars4ikcj0751" path="res://Gameplay_UI.tscn" id="1_hke6g"]
 [ext_resource type="AudioStream" uid="uid://bkaqksofhuqmr" path="res://Assets/Sounds/MonkeFeet.ogg" id="2_i04yh"]
 [ext_resource type="Script" path="res://Scenes/Interactables/Arm.gd" id="2_oxtl4"]
 [ext_resource type="PackedScene" uid="uid://dfblgjqiy0epp" path="res://Assets/monkkee_body.glb" id="2_rwuve"]
@@ -33,6 +34,8 @@ height = 1.0
 size = Vector3(0.1, 0.5, 0.2)
 
 [node name="Player" type="Node3D"]
+
+[node name="Gameplay_UI" parent="." instance=ExtResource("1_hke6g")]
 
 [node name="Body" type="CharacterBody3D" parent="." groups=["player"]]
 script = ExtResource("1_fcuqg")
