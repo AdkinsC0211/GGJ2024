@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgi44c5a0wn8h"
+path="res://.godot/imported/3DPear003_HQ-1K-PNG.obj-9e373e61b4b4ab41850d2ef6fd84bb54.mesh"
+
+[deps]
+
+files=["res://.godot/imported/3DPear003_HQ-1K-PNG.obj-9e373e61b4b4ab41850d2ef6fd84bb54.mesh"]
+
+source_file="res://Assets/Materials/Banana Peel/3DPear003_HQ-1K-PNG.obj"
+dest_files=["res://.godot/imported/3DPear003_HQ-1K-PNG.obj-9e373e61b4b4ab41850d2ef6fd84bb54.mesh", "res://.godot/imported/3DPear003_HQ-1K-PNG.obj-9e373e61b4b4ab41850d2ef6fd84bb54.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
