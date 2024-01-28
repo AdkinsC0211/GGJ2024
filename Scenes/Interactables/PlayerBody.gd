@@ -31,11 +31,14 @@ func _physics_process(delta):
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		if is_on_floor():
+			$monkkee_body/AnimationPlayer.current_animation = "RootAction"
+			$monkkee_body/AnimationPlayer.active = true
 			if not $MonkeyFeet.playing:
 				$MonkeyFeet.play()
 		else:
 			$MonkeyFeet.stop()
 	else:
+		$monkkee_body/AnimationPlayer.current_animation = "[stop]"
 		if $MonkeyFeet.playing:
 			$MonkeyFeet.stop()
 		velocity.x = move_toward(velocity.x, 0, SPEED)
