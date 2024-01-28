@@ -45,6 +45,7 @@ stream = SubResource("AudioStreamWAV_6jk2i")
 [node name="MonkeyFeet" type="AudioStreamPlayer3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78125, 0)
 stream = ExtResource("2_i04yh")
+volume_db = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="Body"]
 transform = Transform3D(1, -8.88178e-16, 2.98023e-08, -7.71341e-09, 0.965926, 0.258819, -2.87868e-08, -0.258819, 0.965926, 0, 2.47428, 3.59623)
