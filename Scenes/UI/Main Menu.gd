@@ -13,6 +13,7 @@ func _process(_delta):
 
 func _on_play_pressed():
 	get_tree().get_root().get_node("/root/Singleton").change_level("res://Scenes/Levels/Level_1.tscn")
+	get_tree().get_root().get_node("/root/Singleton").change_music("res://Assets/Sounds/science-inspirational-business-futuristic-documentary-powerful-music-184337.ogg")
 
 
 func _on_quit_pressed():

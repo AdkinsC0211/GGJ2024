@@ -61,6 +61,12 @@ func change_menu(scenePath):
 	if temper!=0:
 		get_tree().get_root().get_node("Main").get_node("WorldRoot").get_node("Level").get_child(0).queue_free()
 
+func change_music(audioPath):
+	var temp = load(audioPath)
+	if temp != get_tree().get_root().get_node("Main").get_node("Music").stream:
+		get_tree().get_root().get_node("Main").get_node("Music").stream = temp
+		get_tree().get_root().get_node("Main").get_node("Music").play()
+
 func pause():
 	get_tree().paused = !get_tree().paused
 	if get_tree().paused:
