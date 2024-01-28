@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://co0tep1720kut"]
+[gd_scene load_steps=12 format=3 uid="uid://co0tep1720kut"]
 
 [ext_resource type="PackedScene" uid="uid://c8nwwxl2fu258" path="res://LevelParts/Singles/hallway_segment.tscn" id="1_vevmv"]
 [ext_resource type="PackedScene" uid="uid://cfna2nvj4sr3b" path="res://LevelParts/Multi/hallway_doors.tscn" id="2_kede2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dqni4smjy7xiq" path="res://LevelParts/Props/box_stack_3.tscn" id="8_s2w1b"]
 [ext_resource type="PackedScene" uid="uid://c4dvgturew73h" path="res://LevelParts/Props/wall_convayor_1.tscn" id="9_e0j2s"]
 [ext_resource type="PackedScene" uid="uid://d1rqbnc3fvjod" path="res://LevelParts/Props/room_convayor_1.tscn" id="10_4488n"]
+[ext_resource type="PackedScene" uid="uid://d4gao4e54bo33" path="res://Scenes/Interactables/LevelTrigger.tscn" id="11_wb3d0"]
 
 [node name="SceneRoot2" type="Node3D"]
 
@@ -209,41 +210,45 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.942
 
 [node name="Section 3" type="Node" parent="."]
 
-[node name="BoxStack1" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack1" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.72565, 1.21809, -100.683)
 
-[node name="BoxStack2" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack2" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.36297, 1.21809, -98.3782)
 
-[node name="BoxStack5" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack5" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.55027, 1.21809, -90.7807)
 
-[node name="BoxStack3" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack3" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.96886, 1.21809, -100.808)
 
-[node name="BoxStack4" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack4" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.39499, 1.63192, -100.567)
 
-[node name="BoxStack6" parent="." instance=ExtResource("6_ggtuk")]
+[node name="BoxStack6" parent="Section 3" instance=ExtResource("6_ggtuk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15767, 0.00555372, -96.15)
 
-[node name="BoxStack7" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack7" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22195, 0.00555372, -93.6668)
 
-[node name="BoxStack8" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack8" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.29954, 0.00555372, -95.2384)
 
-[node name="BoxStack9" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack9" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.23631, 0.00555372, -94.0792)
 
-[node name="BoxStack10" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack10" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.93764, 0.00555372, -96.2829)
 
-[node name="BoxStack11" parent="." instance=ExtResource("6_ggtuk")]
+[node name="BoxStack11" parent="Section 3" instance=ExtResource("6_ggtuk")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.22358, 0.00555372, -89.6566)
 
-[node name="BoxStack12" parent="." instance=ExtResource("6_ggtuk")]
+[node name="BoxStack12" parent="Section 3" instance=ExtResource("6_ggtuk")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.47743, 0.00555372, -99.4913)
 
-[node name="BoxStack13" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack13" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97739, 0.00555325, -102.966)
+
+[node name="Level End" parent="." instance=ExtResource("11_wb3d0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, 0.810201, -120.382)
+levelPath = "Level_2"
