@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bhsqxxa7frqoo"]
+[gd_scene load_steps=22 format=3 uid="uid://bhsqxxa7frqoo"]
 
 [ext_resource type="PackedScene" uid="uid://c0udxxj4kkejm" path="res://LevelParts/Multi/hallway_windows_small.tscn" id="1_8nod7"]
 [ext_resource type="PackedScene" uid="uid://c8nwwxl2fu258" path="res://LevelParts/Singles/hallway_segment.tscn" id="2_405ka"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c4dvgturew73h" path="res://LevelParts/Props/wall_convayor_1.tscn" id="11_b02w4"]
 [ext_resource type="Texture2D" uid="uid://dkp5l4kkba4mj" path="res://Mesh/among_us_with_outline_0.png" id="12_8h18t"]
 [ext_resource type="Texture2D" uid="uid://d2p33g26hd1ac" path="res://Mesh/among_us_with_outline_1.png" id="13_yiv4h"]
+[ext_resource type="PackedScene" uid="uid://d4gao4e54bo33" path="res://Scenes/Interactables/LevelTrigger.tscn" id="14_6d83l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clymp"]
 resource_name = "Outline"
@@ -388,8 +389,6 @@ skin = SubResource("Skin_cdqsg")
 mesh = SubResource("ArrayMesh_s3lsa")
 skin = SubResource("Skin_cdqsg")
 
-[node name="Object_7_10" type="Node3D" parent="AMONGUS"]
-
-[node name="Object_8_11" type="Node3D" parent="AMONGUS"]
-
-[node name="Object_9_12" type="Node3D" parent="AMONGUS"]
+[node name="Level End" parent="." instance=ExtResource("14_6d83l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, 0.810201, -120.382)
+levelPath = "Level_3"

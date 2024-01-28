@@ -1,16 +1,27 @@
-[gd_scene load_steps=12 format=3 uid="uid://c80c8yqxkpmrb"]
+[gd_scene load_steps=21 format=3 uid="uid://c80c8yqxkpmrb"]
 
 [ext_resource type="PackedScene" uid="uid://c8nwwxl2fu258" path="res://LevelParts/Singles/hallway_segment.tscn" id="1_x45a8"]
 [ext_resource type="PackedScene" uid="uid://cfna2nvj4sr3b" path="res://LevelParts/Multi/hallway_doors.tscn" id="2_j2a7d"]
 [ext_resource type="PackedScene" uid="uid://ds231623qryop" path="res://LevelParts/Multi/hallway_windows_large.tscn" id="3_gb8kj"]
 [ext_resource type="PackedScene" uid="uid://c0udxxj4kkejm" path="res://LevelParts/Multi/hallway_windows_small.tscn" id="4_tn0fy"]
+[ext_resource type="ArrayMesh" uid="uid://t3bpj1881k1b" path="res://Mesh/Other/floor-large.obj" id="5_d6a8q"]
 [ext_resource type="PackedScene" uid="uid://hlmo83q1odvt" path="res://LevelParts/Singles/hallway_end.tscn" id="5_ymndv"]
 [ext_resource type="PackedScene" uid="uid://dhmhmvcgk7dfx" path="res://Scenes/Interactables/Player.tscn" id="6_b2kp2"]
+[ext_resource type="ArrayMesh" uid="uid://bnhb5tyusb35w" path="res://Mesh/Structure/structure-wall.obj" id="6_poudv"]
+[ext_resource type="ArrayMesh" uid="uid://dmow862rff26d" path="res://Mesh/Other/top-large.obj" id="7_gg1cf"]
 [ext_resource type="PackedScene" uid="uid://c4dvgturew73h" path="res://LevelParts/Props/wall_convayor_1.tscn" id="7_r34g8"]
 [ext_resource type="PackedScene" uid="uid://dcj6duuo15715" path="res://LevelParts/Props/box_stack_2.tscn" id="8_mbaxs"]
+[ext_resource type="ArrayMesh" uid="uid://biwcrds3gmibj" path="res://Mesh/Other/door-wide-closed.obj" id="8_sccq2"]
 [ext_resource type="PackedScene" uid="uid://dqni4smjy7xiq" path="res://LevelParts/Props/box_stack_3.tscn" id="9_1il1c"]
+[ext_resource type="ArrayMesh" uid="uid://cf4oi8l8fek2t" path="res://Mesh/Structure/structure-corner-inner.obj" id="9_dvg2f"]
+[ext_resource type="ArrayMesh" uid="uid://d0lltqefbudhs" path="res://Mesh/Structure/structure-doorway-wide.obj" id="10_he3ef"]
 [ext_resource type="PackedScene" uid="uid://b1nsh57mucp8t" path="res://LevelParts/Props/box_stack_1.tscn" id="10_tpdc7"]
 [ext_resource type="PackedScene" uid="uid://d1rqbnc3fvjod" path="res://LevelParts/Props/room_convayor_1.tscn" id="11_ytin3"]
+[ext_resource type="PackedScene" uid="uid://d4gao4e54bo33" path="res://Scenes/Interactables/LevelTrigger.tscn" id="12_3l5tf"]
+[ext_resource type="PackedScene" uid="uid://bg1nfdosva3c5" path="res://Assets/vault_door.glb" id="19_rlrxs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_frysk"]
+size = Vector3(20, 0.423553, 19.3826)
 
 [node name="SceneRoot" type="Node3D"]
 
@@ -39,8 +50,121 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -96)
 [node name="HallwaySegment6" parent="Geometry" instance=ExtResource("1_x45a8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -112)
 
-[node name="HallwayEnd" parent="Geometry" instance=ExtResource("5_ymndv")]
+[node name="HallwayEnd" type="Node3D" parent="Geometry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -128)
+
+[node name="HallwaySegment" type="Node3D" parent="Geometry/HallwayEnd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 4)
+
+[node name="Floor-large" type="MeshInstance3D" parent="Geometry/HallwayEnd/HallwaySegment"]
+transform = Transform3D(7, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("5_d6a8q")
+skeleton = NodePath("../../../..")
+
+[node name="Walls" type="Node3D" parent="Geometry/HallwayEnd/HallwaySegment"]
+
+[node name="Structure-wall" type="MeshInstance3D" parent="Geometry/HallwayEnd/HallwaySegment/Walls"]
+transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
+mesh = ExtResource("6_poudv")
+skeleton = NodePath("../../../../..")
+
+[node name="Structure-wall2" type="MeshInstance3D" parent="Geometry/HallwayEnd/HallwaySegment/Walls"]
+transform = Transform3D(1.50996e-07, 0, -2, 0, 2, 0, 2, 0, 1.50996e-07, -8, 0, 0)
+mesh = ExtResource("6_poudv")
+skeleton = NodePath("../../../../..")
+
+[node name="Roof" type="Node3D" parent="Geometry/HallwayEnd/HallwaySegment"]
+
+[node name="Top-large" type="MeshInstance3D" parent="Geometry/HallwayEnd/HallwaySegment/Roof"]
+transform = Transform3D(9.6, 0, 0, 0, -1, -8.9407e-08, 0, 8.9407e-08, -1, 0, 6, 0)
+mesh = ExtResource("7_gg1cf")
+skeleton = NodePath("../..")
+
+[node name="EndSegment" type="Node3D" parent="Geometry/HallwayEnd"]
+
+[node name="Door-wide-closed" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment"]
+transform = Transform3D(8.74228e-08, -2, 7.64274e-15, -2, -8.74228e-08, -1.74846e-07, 1.74846e-07, 0, -2, 0, 1.5, -2)
+mesh = ExtResource("8_sccq2")
+skeleton = NodePath("../..")
+
+[node name="Door-wide-closed2" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment"]
+transform = Transform3D(8.74228e-08, 2, 7.64274e-15, 2, -8.74228e-08, 1.74846e-07, 1.74846e-07, 0, -2, 0, 1.5, -2)
+mesh = ExtResource("8_sccq2")
+skeleton = NodePath("../..")
+
+[node name="Walls" type="Node3D" parent="Geometry/HallwayEnd/EndSegment"]
+
+[node name="Structure-corner-inner" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, -8, 0, -1)
+mesh = ExtResource("9_dvg2f")
+skeleton = NodePath("../../..")
+
+[node name="Structure-corner-inner2" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+transform = Transform3D(2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 8, 0, -1)
+mesh = ExtResource("9_dvg2f")
+skeleton = NodePath("../../..")
+
+[node name="Structure-doorway-wide" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+transform = Transform3D(-2, 0, 3.01992e-07, 0, 2, 0, -3.01992e-07, 0, -2, 0, 0, -1)
+mesh = ExtResource("10_he3ef")
+skeleton = NodePath("../../..")
+
+[node name="Structure-wall" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+transform = Transform3D(-6, 0, -3.01992e-07, 0, 2, 0, 9.05975e-07, 0, -2, -5, 0, -1)
+mesh = ExtResource("6_poudv")
+skeleton = NodePath("../../..")
+
+[node name="Structure-wall2" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+transform = Transform3D(-6, 0, -3.01992e-07, 0, 2, 0, 9.05975e-07, 0, -2, 5, 0, -1)
+mesh = ExtResource("6_poudv")
+skeleton = NodePath("../../..")
+
+[node name="Roof" type="Node3D" parent="Geometry/HallwayEnd/EndSegment"]
+
+[node name="Top-large" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Roof"]
+transform = Transform3D(9.2, 0, 0, 0, -1, -1.74846e-07, 0, 8.74228e-08, -2, 0, 6, -2)
+mesh = ExtResource("7_gg1cf")
+skeleton = NodePath("../..")
+
+[node name="Collison" type="Node3D" parent="Geometry/HallwayEnd"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/HallwayEnd/Collison"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/HallwayEnd/Collison/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
+shape = SubResource("BoxShape3D_frysk")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Geometry/HallwayEnd/Collison"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -8, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/HallwayEnd/Collison/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
+shape = SubResource("BoxShape3D_frysk")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Geometry/HallwayEnd/Collison"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/HallwayEnd/Collison/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
+shape = SubResource("BoxShape3D_frysk")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Geometry/HallwayEnd/Collison"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 4, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/HallwayEnd/Collison/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
+shape = SubResource("BoxShape3D_frysk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Geometry/HallwayEnd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.48447, 4)
+omni_range = 11.8411
+omni_attenuation = 0.732041
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Geometry/HallwayEnd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.48447, 4)
+omni_range = 11.8411
+omni_attenuation = 0.732041
 
 [node name="HallwayEnd2" parent="Geometry" instance=ExtResource("5_ymndv")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 16)
@@ -221,3 +345,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.529
 
 [node name="BoxStack7" parent="Section 3" instance=ExtResource("8_mbaxs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.94052, 0.00555372, -110.867)
+
+[node name="Level End" parent="." instance=ExtResource("12_3l5tf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, 0.810201, -125.296)
+levelPath = ""
+
+[node name="vault_door" parent="." instance=ExtResource("19_rlrxs")]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 0.00388336, 1.65506, -129.576)
