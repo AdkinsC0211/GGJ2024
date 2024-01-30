@@ -18,6 +18,8 @@ albedo_color = Color(1, 1, 0.396078, 1)
 material = SubResource("StandardMaterial3D_jeuop")
 
 [node name="Banan" type="GPUParticles3D"]
+emitting = false
+one_shot = true
 explosiveness = 0.9
 randomness = 0.2
 visibility_aabb = AABB(-0.380713, -0.367179, -0.363583, 0.761426, 0.734358, 0.727166)

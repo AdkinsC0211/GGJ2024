@@ -1,5 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://co0tep1720kut"]
+[gd_scene load_steps=15 format=3 uid="uid://co0tep1720kut"]
 
+[ext_resource type="PackedScene" uid="uid://bbdagba66kw1l" path="res://enemy.tscn" id="1_574ay"]
+[ext_resource type="Script" path="res://Scenes/Levels/Level_1.gd" id="1_rcji2"]
 [ext_resource type="PackedScene" uid="uid://c8nwwxl2fu258" path="res://LevelParts/Singles/hallway_segment.tscn" id="1_vevmv"]
 [ext_resource type="PackedScene" uid="uid://cfna2nvj4sr3b" path="res://LevelParts/Multi/hallway_doors.tscn" id="2_kede2"]
 [ext_resource type="PackedScene" uid="uid://ds231623qryop" path="res://LevelParts/Multi/hallway_windows_large.tscn" id="3_x58dl"]
@@ -10,41 +12,92 @@
 [ext_resource type="PackedScene" uid="uid://dqni4smjy7xiq" path="res://LevelParts/Props/box_stack_3.tscn" id="8_s2w1b"]
 [ext_resource type="PackedScene" uid="uid://c4dvgturew73h" path="res://LevelParts/Props/wall_convayor_1.tscn" id="9_e0j2s"]
 [ext_resource type="PackedScene" uid="uid://d1rqbnc3fvjod" path="res://LevelParts/Props/room_convayor_1.tscn" id="10_4488n"]
+[ext_resource type="PackedScene" uid="uid://dd8wlq6kuao1m" path="res://Scenes/Interactables/LevelTrigger.tscn" id="13_1knbv"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_syfk4"]
+vertices = PackedVector3Array(10.5, 6.45, -131.5, -10.5, 6.45, -131.5, -9.25, 6.45, -130, 9.25, 6.45, -130, 9.25, 6.45, 18, -9.25, 6.45, 18, -10.5, 6.45, 19.5, 10.5, 6.45, 19.5, 10.5, 6.45, 19.5, 10.5, 6.45, -131.5, 9.25, 6.45, -130, 9.25, 6.45, 18, -9.25, 6.45, 18, -9.25, 6.45, -130, -10.5, 6.45, -131.5, -10.5, 6.45, 19.5, -2.5, 3.7, -131.5, -2.5, 3.7, -130.75, 2.75, 3.7, -130.75, 2.75, 3.7, -131.5, -2.25, 0.45, 17, -2, 0.45, 18.25, 2, 0.45, 18.25, 2.25, 0.45, -129, 2, 0.45, -130.25, -2, 0.45, -130.25, -2.25, 0.45, -129, -2.25, 0.45, 17, 2, 0.45, 18.25, 2.25, 0.45, 17, 2.25, 0.45, -129, -2, 0.45, -130.25, 8.25, 0.45, -129.25, 2.25, 0.45, -129, 2.25, 0.45, 17, 8.25, 0.45, 17.25, -8.25, 0.45, -129.25, -8.25, 0.45, 17.25, -2.25, 0.45, 17, -2.25, 0.45, -129, 9.75, 3.7, -39.5, 9.75, 3.7, -36.5, 10.5, 3.7, -36.5, 10.5, 3.7, -39.5, 9.5, 0.45, -39.25, 9.5, 0.45, -36.75, 10.5, 0.45, -36.75, 10.5, 0.45, -39.25, 9.75, 3.7, -33.5, 9.75, 3.7, -30.5, 10.5, 3.7, -30.5, 10.5, 3.7, -33.5, 9.5, 0.45, -33.25, 9.5, 0.45, -30.75, 10.5, 0.45, -30.75, 10.5, 0.45, -33.25, 9.75, 3.7, -27.5, 9.75, 3.7, -24.5, 10.5, 3.7, -24.5, 10.5, 3.7, -27.5, 9.5, 0.45, -27.25, 9.5, 0.45, -24.75, 10.5, 0.45, -24.75, 10.5, 0.45, -27.25, -2.5, 3.7, 18.75, -2.5, 3.7, 19.5, 2.5, 3.7, 19.5, 2.5, 3.7, 18.75)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(4, 7, 5), PackedInt32Array(5, 7, 6), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(12, 15, 13), PackedInt32Array(13, 15, 14), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(22, 21, 20), PackedInt32Array(25, 24, 23), PackedInt32Array(31, 30, 26), PackedInt32Array(26, 30, 29), PackedInt32Array(26, 29, 28), PackedInt32Array(26, 28, 27), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(39, 38, 36), PackedInt32Array(36, 38, 37), PackedInt32Array(43, 42, 40), PackedInt32Array(40, 42, 41), PackedInt32Array(47, 46, 44), PackedInt32Array(44, 46, 45), PackedInt32Array(51, 50, 48), PackedInt32Array(48, 50, 49), PackedInt32Array(55, 54, 52), PackedInt32Array(52, 54, 53), PackedInt32Array(59, 58, 56), PackedInt32Array(56, 58, 57), PackedInt32Array(63, 62, 60), PackedInt32Array(60, 62, 61), PackedInt32Array(67, 66, 64), PackedInt32Array(64, 66, 65)]
 
 [node name="SceneRoot2" type="Node3D"]
+script = ExtResource("1_rcji2")
 
-[node name="Geometry" type="Node" parent="."]
+[node name="Enemy" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.132153, 0, -0.991229, 0, 1, 0, 0.991229, 0, -0.132153, -3.18027, 1, -4.49417)
 
-[node name="HallwaySegment" parent="Geometry" instance=ExtResource("1_vevmv")]
+[node name="Enemy2" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.132153, 0, -0.991229, 0, 1, 0, 0.991229, 0, -0.132153, -3.18027, 1, -10.4665)
 
-[node name="HallwaySegment2" parent="Geometry" instance=ExtResource("1_vevmv")]
+[node name="Enemy3" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.832196, 0, -0.554481, 0, 1, 0, 0.554481, 0, -0.832196, -0.540722, 1, -13.9607)
+
+[node name="Enemy5" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.832196, 0, -0.554481, 0, 1, 0, 0.554481, 0, -0.832196, -0.540722, 1, -18.8672)
+
+[node name="Enemy4" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.905976, 0, -0.42333, 0, 1, 0, 0.42333, 0, -0.905976, 2.27358, 1, -19.0095)
+
+[node name="Enemy6" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.905976, 0, -0.42333, 0, 1, 0, 0.42333, 0, -0.905976, 3.9238, 1, -23.98)
+
+[node name="Enemy7" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.905976, 0, -0.42333, 0, 1, 0, 0.42333, 0, -0.905976, 3.9238, 1, -33.8241)
+
+[node name="Enemy8" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.905976, 0, -0.42333, 0, 1, 0, 0.42333, 0, -0.905976, -1.0762, 1, -48.0556)
+
+[node name="Enemy9" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.913254, 0, -0.40739, 0, 1, 0, 0.40739, 0, -0.913254, -1.0762, 1, -42.1182)
+
+[node name="Enemy10" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.995026, 0, -0.099615, 0, 1, 0, 0.099615, 0, -0.995026, 1.43506, 1, -59.6712)
+
+[node name="Enemy11" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.995026, 0, -0.099615, 0, 1, 0, 0.099615, 0, -0.995026, 5.03449, 1, -71.4461)
+
+[node name="Enemy12" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.995026, 0, -0.099615, 0, 1, 0, 0.099615, 0, -0.995026, -5.68305, 1, -81.2664)
+
+[node name="Enemy13" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.995026, 0, -0.099615, 0, 1, 0, 0.099615, 0, -0.995026, -0.623482, 1, -100.818)
+
+[node name="Enemy14" parent="." instance=ExtResource("1_574ay")]
+transform = Transform3D(-0.995026, 0, -0.099615, 0, 1, 0, 0.099615, 0, -0.995026, -0.623482, 1, -113.632)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_syfk4")
+
+[node name="Geometry" type="Node" parent="NavigationRegion3D"]
+
+[node name="HallwaySegment" parent="NavigationRegion3D/Geometry" instance=ExtResource("1_vevmv")]
+
+[node name="HallwaySegment2" parent="NavigationRegion3D/Geometry" instance=ExtResource("1_vevmv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -16)
 
-[node name="Hallway_Doors" parent="Geometry" instance=ExtResource("2_kede2")]
+[node name="Hallway_Doors" parent="NavigationRegion3D/Geometry" instance=ExtResource("2_kede2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
 
-[node name="HallwaySegment4" parent="Geometry" instance=ExtResource("1_vevmv")]
+[node name="HallwaySegment4" parent="NavigationRegion3D/Geometry" instance=ExtResource("1_vevmv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -48)
 
-[node name="Hallway_WindowsLarge" parent="Geometry" instance=ExtResource("3_x58dl")]
+[node name="Hallway_WindowsLarge" parent="NavigationRegion3D/Geometry" instance=ExtResource("3_x58dl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
 
-[node name="HallwaySegment5" parent="Geometry" instance=ExtResource("1_vevmv")]
+[node name="HallwaySegment5" parent="NavigationRegion3D/Geometry" instance=ExtResource("1_vevmv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -80)
 
-[node name="Hallway_WindowsLarge2" parent="Geometry" instance=ExtResource("3_x58dl")]
+[node name="Hallway_WindowsLarge2" parent="NavigationRegion3D/Geometry" instance=ExtResource("3_x58dl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -96)
 
-[node name="HallwaySegment6" parent="Geometry" instance=ExtResource("1_vevmv")]
+[node name="HallwaySegment6" parent="NavigationRegion3D/Geometry" instance=ExtResource("1_vevmv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -112)
 
-[node name="HallwayEnd" parent="Geometry" instance=ExtResource("5_sykin")]
+[node name="HallwayEnd" parent="NavigationRegion3D/Geometry" instance=ExtResource("5_sykin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -128)
 
-[node name="HallwayEnd2" parent="Geometry" instance=ExtResource("5_sykin")]
+[node name="HallwayEnd2" parent="NavigationRegion3D/Geometry" instance=ExtResource("5_sykin")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 16)
 
-[node name="Player" parent="." instance=ExtResource("4_qarpv")]
+[node name="Player" parent="." groups=["enemies"] instance=ExtResource("4_qarpv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03613, 0)
 
 [node name="Section 1" type="Node" parent="."]
@@ -209,41 +262,46 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.942
 
 [node name="Section 3" type="Node" parent="."]
 
-[node name="BoxStack1" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack1" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.72565, 1.21809, -100.683)
 
-[node name="BoxStack2" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack2" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.36297, 1.21809, -98.3782)
 
-[node name="BoxStack5" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack5" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.55027, 1.21809, -90.7807)
 
-[node name="BoxStack3" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack3" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.96886, 1.21809, -100.808)
 
-[node name="BoxStack4" parent="." instance=ExtResource("7_iidd3")]
+[node name="BoxStack4" parent="Section 3" instance=ExtResource("7_iidd3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.39499, 1.63192, -100.567)
 
-[node name="BoxStack6" parent="." instance=ExtResource("6_ggtuk")]
+[node name="BoxStack6" parent="Section 3" instance=ExtResource("6_ggtuk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15767, 0.00555372, -96.15)
 
-[node name="BoxStack7" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack7" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.22195, 0.00555372, -93.6668)
 
-[node name="BoxStack8" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack8" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.29954, 0.00555372, -95.2384)
 
-[node name="BoxStack9" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack9" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.23631, 0.00555372, -94.0792)
 
-[node name="BoxStack10" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack10" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.93764, 0.00555372, -96.2829)
 
-[node name="BoxStack11" parent="." instance=ExtResource("6_ggtuk")]
+[node name="BoxStack11" parent="Section 3" instance=ExtResource("6_ggtuk")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.22358, 0.00555372, -89.6566)
 
-[node name="BoxStack12" parent="." instance=ExtResource("6_ggtuk")]
+[node name="BoxStack12" parent="Section 3" instance=ExtResource("6_ggtuk")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.47743, 0.00555372, -99.4913)
 
-[node name="BoxStack13" parent="." instance=ExtResource("8_s2w1b")]
+[node name="BoxStack13" parent="Section 3" instance=ExtResource("8_s2w1b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97739, 0.00555325, -102.966)
+
+[node name="Area3D" parent="." instance=ExtResource("13_1knbv")]
+transform = Transform3D(0.477646, 0, 0, 0, 0.261966, 0, 0, 0, 1, -0.652675, 0.726689, -127.571)
+folderPath = "res://Scenes/Levels/"
+levelPath = "Level_2"

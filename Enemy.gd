@@ -3,9 +3,9 @@ extends CharacterBody3D
 
 @onready var nav_agent = $NavigationAgent3D
 @onready 
-var SPEED = 3.0
+var SPEED = 6.0
 var can_hit=true
-const DEATH = preload("res://Scenes/Particles/banan.tscn")
+
 
 func _physics_process(delta):
 	var current_location = global_transform.origin #current enemy location
@@ -36,4 +36,4 @@ func _on_timer_timeout():
 	can_hit = true
 
 func _exit_tree():
-	get_tree().get_root().get_node("/root/Singleton").play_effect(DEATH, global_transform.origin)
+	get_tree().get_root().get_node("/root/Singleton").play_effect("res://Scenes/Particles/banan.tscn", global_transform.origin)

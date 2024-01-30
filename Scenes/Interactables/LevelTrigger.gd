@@ -15,6 +15,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	var completePath = "res://Scenes/Levels/" + levelPath + ".tscn"
-	
-	get_tree().get_root().get_node("/root/Singleton").change_level(completePath)
+	if(body.is_in_group("player")):
+		var completePath = folderPath + levelPath + ".tscn"
+		
+		get_tree().get_root().get_node("/root/Singleton").change_level(completePath)

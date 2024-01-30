@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://c80c8yqxkpmrb"]
+[gd_scene load_steps=24 format=3 uid="uid://c80c8yqxkpmrb"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/Level_3.gd" id="1_o6m14"]
 [ext_resource type="PackedScene" uid="uid://c8nwwxl2fu258" path="res://LevelParts/Singles/hallway_segment.tscn" id="1_x45a8"]
 [ext_resource type="PackedScene" uid="uid://cfna2nvj4sr3b" path="res://LevelParts/Multi/hallway_doors.tscn" id="2_j2a7d"]
 [ext_resource type="PackedScene" uid="uid://ds231623qryop" path="res://LevelParts/Multi/hallway_windows_large.tscn" id="3_gb8kj"]
@@ -17,159 +18,168 @@
 [ext_resource type="ArrayMesh" uid="uid://d0lltqefbudhs" path="res://Mesh/Structure/structure-doorway-wide.obj" id="10_he3ef"]
 [ext_resource type="PackedScene" uid="uid://b1nsh57mucp8t" path="res://LevelParts/Props/box_stack_1.tscn" id="10_tpdc7"]
 [ext_resource type="PackedScene" uid="uid://d1rqbnc3fvjod" path="res://LevelParts/Props/room_convayor_1.tscn" id="11_ytin3"]
-[ext_resource type="PackedScene" uid="uid://d4gao4e54bo33" path="res://Scenes/Interactables/LevelTrigger.tscn" id="12_3l5tf"]
+[ext_resource type="PackedScene" uid="uid://dd8wlq6kuao1m" path="res://Scenes/Interactables/LevelTrigger.tscn" id="12_3l5tf"]
 [ext_resource type="PackedScene" uid="uid://bg1nfdosva3c5" path="res://Assets/vault_door.glb" id="19_rlrxs"]
+[ext_resource type="PackedScene" uid="uid://bbdagba66kw1l" path="res://enemy.tscn" id="21_y1kti"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_gmufj"]
+vertices = PackedVector3Array(10.5, 6.45, -131.5, -10.5, 6.45, -131.5, -9.25, 6.45, -130, 9.25, 6.45, -130, 9.25, 6.45, 18, -9.25, 6.45, 18, -10.5, 6.45, 19.5, 10.5, 6.45, 19.5, 10.5, 6.45, 19.5, 10.5, 6.45, -131.5, 9.25, 6.45, -130, 9.25, 6.45, 18, -9.25, 6.45, 18, -9.25, 6.45, -130, -10.5, 6.45, -131.5, -10.5, 6.45, 19.5, -1.5, 3.7, -131.5, -1.5, 3.7, -130.75, 1.75, 3.7, -130.75, 1.75, 3.7, -131.5, 1.5, 0.45, -129, 1.25, 0.45, -130.25, -1.25, 0.45, -130.25, -1.5, 0.45, -129, -8.25, 0.45, -129.25, -8.25, 0.45, 17.25, -2.25, 0.45, 17, -1.5, 0.45, -129, -2.25, 0.45, 17, -2, 0.45, 18.25, 2, 0.45, 18.25, 2.25, 0.45, 17, 1.5, 0.45, -129, -1.5, 0.45, -129, 8.25, 0.45, -129.25, 1.5, 0.45, -129, 2.25, 0.45, 17, 8.25, 0.45, 17.25, -10.5, 3.7, -39.5, -10.5, 3.7, -36.5, -9.75, 3.7, -36.5, -9.75, 3.7, -39.5, -10.5, 0.45, -39.25, -10.5, 0.45, -36.75, -9.5, 0.45, -36.75, -9.5, 0.45, -39.25, -10.5, 3.7, -33.5, -10.5, 3.7, -30.5, -9.75, 3.7, -30.5, -9.75, 3.7, -33.5, -10.5, 0.45, -33.25, -10.5, 0.45, -30.75, -9.5, 0.45, -30.75, -9.5, 0.45, -33.25, -10.5, 3.7, -27.5, -10.5, 3.7, -24.5, -9.75, 3.7, -24.5, -9.75, 3.7, -27.5, -10.5, 0.45, -27.25, -10.5, 0.45, -24.75, -9.5, 0.45, -24.75, -9.5, 0.45, -27.25, 9.75, 3.7, -23.5, 9.75, 3.7, -20.5, 10.5, 3.7, -20.5, 10.5, 3.7, -23.5, 9.5, 0.45, -23.25, 9.5, 0.45, -20.75, 10.5, 0.45, -20.75, 10.5, 0.45, -23.25, 9.75, 3.7, -17.5, 9.75, 3.7, -14.5, 10.5, 3.7, -14.5, 10.5, 3.7, -17.5, 9.5, 0.45, -17.25, 9.5, 0.45, -14.75, 10.5, 0.45, -14.75, 10.5, 0.45, -17.25, 9.75, 3.7, -11.5, 9.75, 3.7, -8.5, 10.5, 3.7, -8.5, 10.5, 3.7, -11.5, 9.5, 0.45, -11.25, 9.5, 0.45, -8.75, 10.5, 0.45, -8.75, 10.5, 0.45, -11.25, -2.5, 3.7, 18.75, -2.5, 3.7, 19.5, 2.75, 3.7, 19.5, 2.75, 3.7, 18.75)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(4, 7, 5), PackedInt32Array(5, 7, 6), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(12, 15, 13), PackedInt32Array(13, 15, 14), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(21, 20, 22), PackedInt32Array(22, 20, 23), PackedInt32Array(26, 25, 27), PackedInt32Array(27, 25, 24), PackedInt32Array(29, 28, 30), PackedInt32Array(30, 28, 31), PackedInt32Array(31, 28, 33), PackedInt32Array(31, 33, 32), PackedInt32Array(36, 35, 37), PackedInt32Array(37, 35, 34), PackedInt32Array(41, 40, 38), PackedInt32Array(38, 40, 39), PackedInt32Array(45, 44, 42), PackedInt32Array(42, 44, 43), PackedInt32Array(49, 48, 46), PackedInt32Array(46, 48, 47), PackedInt32Array(53, 52, 50), PackedInt32Array(50, 52, 51), PackedInt32Array(57, 56, 54), PackedInt32Array(54, 56, 55), PackedInt32Array(61, 60, 58), PackedInt32Array(58, 60, 59), PackedInt32Array(65, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(69, 68, 66), PackedInt32Array(66, 68, 67), PackedInt32Array(73, 72, 70), PackedInt32Array(70, 72, 71), PackedInt32Array(77, 76, 74), PackedInt32Array(74, 76, 75), PackedInt32Array(81, 80, 78), PackedInt32Array(78, 80, 79), PackedInt32Array(85, 84, 82), PackedInt32Array(82, 84, 83), PackedInt32Array(89, 88, 86), PackedInt32Array(86, 88, 87)]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_frysk"]
 size = Vector3(20, 0.423553, 19.3826)
 
 [node name="SceneRoot" type="Node3D"]
+script = ExtResource("1_o6m14")
 
-[node name="Geometry" type="Node" parent="."]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_gmufj")
 
-[node name="HallwaySegment" parent="Geometry" instance=ExtResource("1_x45a8")]
+[node name="Geometry" type="Node" parent="NavigationRegion3D"]
 
-[node name="Hallway_Doors" parent="Geometry" instance=ExtResource("2_j2a7d")]
+[node name="HallwaySegment" parent="NavigationRegion3D/Geometry" instance=ExtResource("1_x45a8")]
+
+[node name="Hallway_Doors" parent="NavigationRegion3D/Geometry" instance=ExtResource("2_j2a7d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
 
-[node name="Hallway_Doors2" parent="Geometry" instance=ExtResource("2_j2a7d")]
+[node name="Hallway_Doors2" parent="NavigationRegion3D/Geometry" instance=ExtResource("2_j2a7d")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -32)
 
-[node name="HallwaySegment3" parent="Geometry" instance=ExtResource("1_x45a8")]
+[node name="HallwaySegment3" parent="NavigationRegion3D/Geometry" instance=ExtResource("1_x45a8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -48)
 
-[node name="Hallway_WindowsLarge" parent="Geometry" instance=ExtResource("3_gb8kj")]
+[node name="Hallway_WindowsLarge" parent="NavigationRegion3D/Geometry" instance=ExtResource("3_gb8kj")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -64)
 
-[node name="HallwaySegment5" parent="Geometry" instance=ExtResource("1_x45a8")]
+[node name="HallwaySegment5" parent="NavigationRegion3D/Geometry" instance=ExtResource("1_x45a8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -80)
 
-[node name="Hallway_WindowsSmall" parent="Geometry" instance=ExtResource("4_tn0fy")]
+[node name="Hallway_WindowsSmall" parent="NavigationRegion3D/Geometry" instance=ExtResource("4_tn0fy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -96)
 
-[node name="HallwaySegment6" parent="Geometry" instance=ExtResource("1_x45a8")]
+[node name="HallwaySegment6" parent="NavigationRegion3D/Geometry" instance=ExtResource("1_x45a8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 8, 0, 0, -112)
 
-[node name="HallwayEnd" type="Node3D" parent="Geometry"]
+[node name="HallwayEnd" type="Node3D" parent="NavigationRegion3D/Geometry"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -128)
 
-[node name="HallwaySegment" type="Node3D" parent="Geometry/HallwayEnd"]
+[node name="HallwaySegment" type="Node3D" parent="NavigationRegion3D/Geometry/HallwayEnd"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4, 0, 0, 4)
 
-[node name="Floor-large" type="MeshInstance3D" parent="Geometry/HallwayEnd/HallwaySegment"]
+[node name="Floor-large" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/HallwaySegment"]
 transform = Transform3D(7, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("5_d6a8q")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="Walls" type="Node3D" parent="Geometry/HallwayEnd/HallwaySegment"]
+[node name="Walls" type="Node3D" parent="NavigationRegion3D/Geometry/HallwayEnd/HallwaySegment"]
 
-[node name="Structure-wall" type="MeshInstance3D" parent="Geometry/HallwayEnd/HallwaySegment/Walls"]
+[node name="Structure-wall" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/HallwaySegment/Walls"]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 8, 0, 0)
 mesh = ExtResource("6_poudv")
-skeleton = NodePath("../../../../..")
+skeleton = NodePath("../../../../../..")
 
-[node name="Structure-wall2" type="MeshInstance3D" parent="Geometry/HallwayEnd/HallwaySegment/Walls"]
+[node name="Structure-wall2" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/HallwaySegment/Walls"]
 transform = Transform3D(1.50996e-07, 0, -2, 0, 2, 0, 2, 0, 1.50996e-07, -8, 0, 0)
 mesh = ExtResource("6_poudv")
-skeleton = NodePath("../../../../..")
+skeleton = NodePath("../../../../../..")
 
-[node name="Roof" type="Node3D" parent="Geometry/HallwayEnd/HallwaySegment"]
+[node name="Roof" type="Node3D" parent="NavigationRegion3D/Geometry/HallwayEnd/HallwaySegment"]
 
-[node name="Top-large" type="MeshInstance3D" parent="Geometry/HallwayEnd/HallwaySegment/Roof"]
+[node name="Top-large" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/HallwaySegment/Roof"]
 transform = Transform3D(9.6, 0, 0, 0, -1, -8.9407e-08, 0, 8.9407e-08, -1, 0, 6, 0)
 mesh = ExtResource("7_gg1cf")
 skeleton = NodePath("../..")
 
-[node name="EndSegment" type="Node3D" parent="Geometry/HallwayEnd"]
+[node name="EndSegment" type="Node3D" parent="NavigationRegion3D/Geometry/HallwayEnd"]
 
-[node name="Door-wide-closed" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment"]
+[node name="Door-wide-closed" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment"]
 transform = Transform3D(8.74228e-08, -2, 7.64274e-15, -2, -8.74228e-08, -1.74846e-07, 1.74846e-07, 0, -2, 0, 1.5, -2)
 mesh = ExtResource("8_sccq2")
 skeleton = NodePath("../..")
 
-[node name="Door-wide-closed2" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment"]
+[node name="Door-wide-closed2" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment"]
 transform = Transform3D(8.74228e-08, 2, 7.64274e-15, 2, -8.74228e-08, 1.74846e-07, 1.74846e-07, 0, -2, 0, 1.5, -2)
 mesh = ExtResource("8_sccq2")
 skeleton = NodePath("../..")
 
-[node name="Walls" type="Node3D" parent="Geometry/HallwayEnd/EndSegment"]
+[node name="Walls" type="Node3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment"]
 
-[node name="Structure-corner-inner" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+[node name="Structure-corner-inner" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment/Walls"]
 transform = Transform3D(-2, 0, 1.74846e-07, 0, 2, 0, -1.74846e-07, 0, -2, -8, 0, -1)
 mesh = ExtResource("9_dvg2f")
 skeleton = NodePath("../../..")
 
-[node name="Structure-corner-inner2" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+[node name="Structure-corner-inner2" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment/Walls"]
 transform = Transform3D(2.62268e-07, 0, 2, 0, 2, 0, -2, 0, 2.62268e-07, 8, 0, -1)
 mesh = ExtResource("9_dvg2f")
 skeleton = NodePath("../../..")
 
-[node name="Structure-doorway-wide" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+[node name="Structure-doorway-wide" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment/Walls"]
 transform = Transform3D(-2, 0, 3.01992e-07, 0, 2, 0, -3.01992e-07, 0, -2, 0, 0, -1)
 mesh = ExtResource("10_he3ef")
 skeleton = NodePath("../../..")
 
-[node name="Structure-wall" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+[node name="Structure-wall" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment/Walls"]
 transform = Transform3D(-6, 0, -3.01992e-07, 0, 2, 0, 9.05975e-07, 0, -2, -5, 0, -1)
 mesh = ExtResource("6_poudv")
 skeleton = NodePath("../../..")
 
-[node name="Structure-wall2" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Walls"]
+[node name="Structure-wall2" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment/Walls"]
 transform = Transform3D(-6, 0, -3.01992e-07, 0, 2, 0, 9.05975e-07, 0, -2, 5, 0, -1)
 mesh = ExtResource("6_poudv")
 skeleton = NodePath("../../..")
 
-[node name="Roof" type="Node3D" parent="Geometry/HallwayEnd/EndSegment"]
+[node name="Roof" type="Node3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment"]
 
-[node name="Top-large" type="MeshInstance3D" parent="Geometry/HallwayEnd/EndSegment/Roof"]
+[node name="Top-large" type="MeshInstance3D" parent="NavigationRegion3D/Geometry/HallwayEnd/EndSegment/Roof"]
 transform = Transform3D(9.2, 0, 0, 0, -1, -1.74846e-07, 0, 8.74228e-08, -2, 0, 6, -2)
 mesh = ExtResource("7_gg1cf")
 skeleton = NodePath("../..")
 
-[node name="Collison" type="Node3D" parent="Geometry/HallwayEnd"]
+[node name="Collison" type="Node3D" parent="NavigationRegion3D/Geometry/HallwayEnd"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Geometry/HallwayEnd/Collison"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Geometry/HallwayEnd/Collison"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/HallwayEnd/Collison/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Geometry/HallwayEnd/Collison/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
 shape = SubResource("BoxShape3D_frysk")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Geometry/HallwayEnd/Collison"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="NavigationRegion3D/Geometry/HallwayEnd/Collison"]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -8, 4, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/HallwayEnd/Collison/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Geometry/HallwayEnd/Collison/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
 shape = SubResource("BoxShape3D_frysk")
 
-[node name="StaticBody3D3" type="StaticBody3D" parent="Geometry/HallwayEnd/Collison"]
+[node name="StaticBody3D3" type="StaticBody3D" parent="NavigationRegion3D/Geometry/HallwayEnd/Collison"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 8, 4, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/HallwayEnd/Collison/StaticBody3D3"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Geometry/HallwayEnd/Collison/StaticBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
 shape = SubResource("BoxShape3D_frysk")
 
-[node name="StaticBody3D4" type="StaticBody3D" parent="Geometry/HallwayEnd/Collison"]
+[node name="StaticBody3D4" type="StaticBody3D" parent="NavigationRegion3D/Geometry/HallwayEnd/Collison"]
 transform = Transform3D(1.91069e-15, -4.37114e-08, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -4.37114e-08, 0, 4, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Geometry/HallwayEnd/Collison/StaticBody3D4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Geometry/HallwayEnd/Collison/StaticBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.793777, 0)
 shape = SubResource("BoxShape3D_frysk")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Geometry/HallwayEnd"]
+[node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/Geometry/HallwayEnd"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.48447, 4)
 omni_range = 11.8411
 omni_attenuation = 0.732041
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Geometry/HallwayEnd"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="NavigationRegion3D/Geometry/HallwayEnd"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.48447, 4)
 omni_range = 11.8411
 omni_attenuation = 0.732041
 
-[node name="HallwayEnd2" parent="Geometry" instance=ExtResource("5_ymndv")]
+[node name="HallwayEnd2" parent="NavigationRegion3D/Geometry" instance=ExtResource("5_ymndv")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 16)
 
-[node name="Player" parent="." instance=ExtResource("6_b2kp2")]
+[node name="Player" parent="." groups=["enemies"] instance=ExtResource("6_b2kp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03613, 0)
 
 [node name="Section 1" type="Node" parent="."]
@@ -352,3 +362,68 @@ levelPath = ""
 
 [node name="vault_door" parent="." instance=ExtResource("19_rlrxs")]
 transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, 0.00388336, 1.65506, -129.576)
+
+[node name="Enemy" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.0673362, 0, -0.99773, 0, 1, 0, 0.99773, 0, -0.0673362, -3.71033, 1, -1.91795)
+
+[node name="Enemy4" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.0673362, 0, -0.99773, 0, 1, 0, 0.99773, 0, -0.0673362, -5.04433, 1.43705, -4.48577)
+
+[node name="Enemy2" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, 3.06435, 1, -4.89639)
+
+[node name="Enemy5" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, 3.06435, 1, -19.5734)
+
+[node name="Enemy6" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -2.45463, 1, -24.2342)
+
+[node name="Enemy7" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -6.36733, 1, -34.1165)
+
+[node name="Enemy8" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -6.36733, 1, -40.994)
+
+[node name="Enemy9" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -2.44695, 1, -46.4581)
+
+[node name="Enemy10" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, 6.12212, 1, -54.2935)
+
+[node name="Enemy11" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, 6.12212, 1, -61.1756)
+
+[node name="Enemy12" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -6.70343, 1, -61.1756)
+
+[node name="Enemy13" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -6.70343, 1, -73.445)
+
+[node name="Enemy14" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, 3.98342, 1, -87.9769)
+
+[node name="Enemy15" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -3.6875, 1, -87.9769)
+
+[node name="Enemy16" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -3.6875, 1, -100.601)
+
+[node name="Enemy17" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, 4.20256, 1, -100.601)
+
+[node name="Enemy18" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, 4.20256, 1, -112.092)
+
+[node name="Enemy19" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -4.45984, 1, -112.092)
+
+[node name="Enemy20" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.955937, 0, -0.293573, 0, 1, 0, 0.293573, 0, -0.955937, -0.276278, 1, -119.762)
+
+[node name="Enemy3" parent="." instance=ExtResource("21_y1kti")]
+transform = Transform3D(-0.721555, 0, -0.692357, 0, 1, 0, 0.692357, 0, -0.721555, -0.449084, 1, -4.89639)
+
+[node name="Area3D" parent="." instance=ExtResource("12_3l5tf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.146834, -2.58312, -128.372)
+folderPath = "res://Scenes/UI/"
+levelPath = "Main Menu"
